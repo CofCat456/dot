@@ -6,7 +6,7 @@
 
 ### My Dot Files 
 
-## Features
+## :wrench:  Features
 
 - Configured for TypeScript Development (React, Next, Vue 3, Nuxt.)
 - Cute default theme: [Catppuccin](https://github.com/catppuccin/nvim)
@@ -18,7 +18,7 @@
 
 And of course usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), [bufferline](https://github.com/akinsho/bufferline.nvim), [cmp](https://github.com/hrsh7th/nvim-cmp), [treesitter](https://github.com/nvim-treesitter/nvim-treesitter), [blankline](https://github.com/lukas-reineke/indent-blankline.nvim) & more!
 
-## Screenshots
+## :camera:  Screenshots
 
 Dashboard
 
