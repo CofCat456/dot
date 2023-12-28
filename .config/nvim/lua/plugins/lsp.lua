@@ -10,56 +10,6 @@ return {
 		end,
 	},
 
-	-- lspsaga
-	{
-		"nvimdev/lspsaga.nvim",
-		enabled = false,
-		event = "LspAttach",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons", -- optional
-		},
-		init = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-
-			keys[#keys + 1] = {
-				"<C-j>",
-				"<Cmd>Lspsaga diagnostic_jump_next<CR>",
-				desc = "Jump Next Error",
-			}
-
-			keys[#keys + 1] = {
-				"gd",
-				"<Cmd>Lspsaga finder<CR>",
-				desc = "Finer",
-			}
-
-			keys[#keys + 1] = {
-				"gp",
-				"<Cmd>Lspsaga peek_definition<CR>",
-				desc = "Peek definition",
-			}
-		end,
-		config = function()
-			require("lspsaga").setup({
-				ui = {
-					code_action = "💡",
-				},
-				lightbulb = {
-					sign = false,
-					virtual_text = true,
-					enable = false,
-				},
-				symbols_in_winbar = { enable = true },
-				implement = {
-					enable = true,
-					sign = false,
-					virtual_text = true,
-				},
-			})
-		end,
-	},
-
 	-- glance
 	{
 		"dnlhc/glance.nvim",

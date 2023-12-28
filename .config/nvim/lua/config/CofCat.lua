@@ -14,9 +14,9 @@ local theme = {
 
 CofCat = {
 	--- @usage 'tokyonight' | 'catppuccin' | 'solarized-osaka'
-	colorscheme = theme.catppuccin,
+	colorscheme = theme.tokyonight,
 	ui = {
-		transparent = false,
+		transparent = true,
 		float = {
 			border = "rounded",
 		},

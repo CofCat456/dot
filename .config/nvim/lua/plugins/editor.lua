@@ -192,30 +192,34 @@ return {
 	},
 	{
 		"razak17/tailwind-fold.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {
 			min_chars = 50,
 		},
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
 	},
 	{
 		"MaximilianLloyd/tw-values.nvim",
-		keys = {
-			{ "<Leader>cv", "<CMD>TWValues<CR>", desc = "Tailwind CSS values" },
-		},
 		opts = {
 			border = CofCat.ui.float.border or "rounded", -- Valid window border style,
 			show_unknown_classes = true, -- Shows the unknown classes popup
 		},
+		keys = {
+			{ "<Leader>cv", "<CMD>TWValues<CR>", desc = "Tailwind CSS values" },
+		},
 	},
 	{
 		"laytan/tailwind-sorter.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
+		config = function()
+			require("tailwind-sorter").setup({
+				on_save_pattern = { "*.html", "*.jsx", "*.tsx", ".vue" },
+			})
+		end,
+		build = "cd formatter && npm i && npm run build",
 		cmd = {
 			"TailwindSort",
 			"TailwindSortOnSaveToggle",
 		},
-		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
-		build = "cd formatter && npm i && npm run build",
-		config = true,
 	},
 }

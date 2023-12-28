@@ -4,7 +4,7 @@
 ![Stars](https://img.shields.io/github/stars/CofCat456/dot?colorA=363a4f&colorB=f5a97f&style=for-the-badge)
 ![Issues](https://img.shields.io/github/issues/CofCat456/dot?colorA=363a4f&colorB=a6da95&style=for-the-badge)
 
-### My Dot Files 
+### Welcome to my world! 
 
 ## :wrench:  Features
 
@@ -27,3 +27,42 @@ Dashboard
 Overview
 
 ![Neovim](./.screenshots/2-main.png)
+
+## Initial setup
+
+> [!Note]
+>
+> I'm using macOS.
+
+```bash
+git clone git@github.com:CofCat456/dot.git
+```
+
+### Install
+
+```bash
+sh install.sh
+```
+
+#### `macos`
+
+The `macos` command sets up macOS-specific configurations using the
+`defaults write` commands to change default values for macOS.
+
+- Finder: show all filename extensions
+- show hidden files by default
+- only use UTF-8 in Terminal.app
+- expand save dialog by default
+- Enable full keyboard access for all controls (e.g. enable Tab in modal
+  dialogs)
+- Enable subpixel font rendering on non-Apple LCDs
+- Use current directory as default search scope in Finder
+- Show Path bar in Finder
+- Show Status bar in Finder
+- Disable press-and-hold for keys in favor of key repeat
+- Set a blazingly fast keyboard repeat rate
+- Set a shorter Delay until key repeat
+- Enable tap to click (Trackpad)
+- Enable Safari’s debug menu
+
+## Please Enjoy :)
