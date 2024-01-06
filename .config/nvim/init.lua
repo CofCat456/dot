@@ -1,5 +1,7 @@
 require("config.CofCat")
 
+require("utils.globals")
+
 if vim.loader then
 	vim.loader.enable()
 end

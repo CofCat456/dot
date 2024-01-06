@@ -14,17 +14,14 @@ ls.add_snippets("vue", {
 		"setup",
 		fmt(
 			[[
-<script setup lang="ts">
+<script lang="ts" setup>
 const props = defineProps<{{
   modelValue?: boolean,
 }}>()
 </script>
 
 <template>
-  <div>
-    <slot />
-    {}
-  </div>
+  {}
 </template>
 ]],
 			{

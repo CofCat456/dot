@@ -3,6 +3,9 @@ local baseDefinitionHandler = vim.lsp.handlers["textDocument/definition"]
 local filter = require("utils.lsp.filter").filter
 local filterReactDTS = require("utils.lsp.filterReactDTS").filterReactDTS
 
+local mason_registry = require("mason-registry")
+local tsserver_path = mason_registry.get_package("typescript-language-server"):get_install_path()
+
 local handlers = {
 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		silent = true,
@@ -25,7 +28,7 @@ local handlers = {
 }
 
 require("typescript-tools").setup({
-	on_attach = function(client, bufnr)
+	on_attach = function(_client, bufnr)
 		if vim.fn.has("nvim-0.10") then
 			-- Enable inlay hints
 			vim.lsp.inlay_hint(bufnr, true)
@@ -34,10 +37,15 @@ require("typescript-tools").setup({
 	handlers = handlers,
 	settings = {
 		separate_diagnostic_server = true,
+		composite_mode = "separate_diagnostic",
 		tsserver_file_preferences = {
+			importModuleSpecifierPreference = "non-relative",
 			includeInlayParameterNameHints = "all",
 			includeCompletionsForModuleExports = true,
 			quotePreference = "auto",
+		},
+		tsserver_plugins = {
+			"@styled/typescript-styled-plugin",
 		},
 	},
 })

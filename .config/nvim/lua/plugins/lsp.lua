@@ -1,6 +1,7 @@
 return {
 	{
 		"pmizio/typescript-tools.nvim",
+		enabled = CofCat.plugins.typescriptTools,
 		event = { "BufReadPre", "BufNewFile" },
 		cond = require("utils.have").enabled_typescript_tools(),
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -50,14 +51,18 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = function(_, opts)
+			require("mason").setup({
+				ui = {
+					border = "rounded",
+				},
+			})
+
 			vim.list_extend(opts.ensure_installed, {
 				"stylua",
 				"selene",
 				"luacheck",
 				"shellcheck",
 				"shfmt",
-				"tailwindcss-language-server",
-				"css-lsp",
 			})
 		end,
 	},
@@ -76,15 +81,20 @@ return {
 					end,
 				},
 				volar = {
-					capabilities = require("utils.volar").capabilities,
-					filetypes = require("utils.volar").filetypes,
-					root_dir = require("utils.volar").root_dir,
-					init_options = require("utils.volar").init_options,
-					on_new_config = require("utils.volar").on_new_config,
-					settings = require("utils.volar").settings,
-					on_attach = require("utils.volar").on_attach,
+					-- capabilities = require("utils.volar").capabilities,
+					filetypes = require("utils.lsp.volar").filetypes,
+					root_dir = require("utils.lsp.volar").root_dir,
+					-- init_options = require("utils.volar").init_options,
+					on_new_config = require("utils.lsp.volar").on_new_config,
+					settings = require("utils.lsp.volar").settings,
+					on_attach = require("utils.lsp.volar").on_attach,
 				},
 				html = {},
+				emmet_ls = {
+					filetypes = {
+						"html",
+					},
+				},
 				yamlls = {
 					settings = {
 						yaml = {

@@ -21,6 +21,10 @@ CofCat = {
 			border = "rounded",
 		},
 	},
+	plugins = {
+		flash = true,
+		typescriptTools = true,
+	},
 	lsp = {
 		virtual_text = true, -- show virtual text (errors, warnings, info) inline messages
 	},

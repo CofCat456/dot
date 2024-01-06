@@ -2,6 +2,7 @@ return {
 	-- Create annotations with one keybind, and jump your cursor in the inserted annotation
 	{
 		"danymat/neogen",
+		opts = { snippet_engine = "luasnip" },
 		keys = {
 			{
 				"<leader>cc",
@@ -11,7 +12,6 @@ return {
 				desc = "Neogen Comment",
 			},
 		},
-		opts = { snippet_engine = "luasnip" },
 	},
 
 	-- Incremental rename
@@ -24,6 +24,8 @@ return {
 	-- Refactoring tool
 	{
 		"ThePrimeagen/refactoring.nvim",
+		enabled = false,
+		opts = {},
 		keys = {
 			{
 				"<leader>r",
@@ -36,7 +38,6 @@ return {
 				expr = false,
 			},
 		},
-		opts = {},
 	},
 
 	{

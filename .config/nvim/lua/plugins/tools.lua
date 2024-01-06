@@ -4,7 +4,13 @@ return {
 		"sindrets/diffview.nvim",
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
 		opts = {},
-		keys = { { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffView" } },
+		keys = {
+			{
+				"<leader>gd",
+				"<cmd>DiffviewOpen<cr>",
+				desc = "DiffView",
+			},
+		},
 	},
 
 	-- peek lines just when you intend
@@ -82,6 +88,7 @@ return {
 	-- fash move
 	{
 		"folke/flash.nvim",
+		enabled = CofCat.plugins.flash,
 		event = "VeryLazy",
 		opts = {
 			char = {

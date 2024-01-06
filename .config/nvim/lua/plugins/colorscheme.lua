@@ -2,36 +2,35 @@ return {
 	-- solarized-osaka
 	{
 		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
 		enabled = CofCat.colorscheme == "solarized-osaka",
-		lazy = true,
-		priority = 1000,
 		opts = function()
 			return {
 				transparent = true,
 			}
 		end,
+		priority = 1000,
 	},
 
 	--  tokyonight
 	{
 		"folke/tokyonight.nvim",
-		name = "tokyonight",
-		enabled = CofCat.colorscheme == "moon",
-		event = "VeryLazy",
+		lazy = false,
+		enabled = CofCat.colorscheme == "tokyonight",
 		config = function()
 			require("plugins.theme.tokyonight")
 		end,
+		priority = 1000,
 	},
 
 	-- Catppuccin
 	{
 		"catppuccin/nvim",
-		name = "catppuccin",
-		enabled = CofCat.colorscheme == "catppuccin",
 		lazy = false,
-		priority = 1000,
+		enabled = CofCat.colorscheme == "catppuccin",
 		config = function()
 			require("plugins.theme.catppuccin")
 		end,
+		priority = 1000,
 	},
 }

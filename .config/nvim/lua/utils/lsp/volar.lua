@@ -65,11 +65,11 @@ local on_attach = function(client)
 end
 
 M.capabilities = capabilities
-M.root_dir = root_dir
-M.on_attach = on_attach
 M.filetypes = filetypes
-M.settings = settings
+M.root_dir = root_dir
 M.init_options = init_options
 M.on_new_config = on_new_config
+M.settings = settings
+M.on_attach = on_attach
 
 return M
