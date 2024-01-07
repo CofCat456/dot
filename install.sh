@@ -150,6 +150,34 @@ setup_git() {
 			git config --global credential.helper "cache --timeout 3600"
 		fi
 	fi
+
+	success "Setting up Git Done."
+}
+
+setup_vscode() {
+	title "Setting up VS Code"
+
+	info "Creating symlink for setting.json"
+	config_files=$(find "$DOTFILES/.vscode" -type f -maxdepth 1 2>/dev/null)
+	for config in $config_files; do
+		target="$HOME/Library/Application Support/Code/User/$(basename "$config")"
+		if [ -e "$target" ]; then
+			info "~${target#$HOME} already exists... Skipping."
+		else
+			info "Creating symlink for $config"
+			ln -s "$config" "$target"
+		fi
+	done
+
+	if test ! "$(command -v code)"; then
+		warning "Code command not add. Adding."
+	fi
+
+	info "Installing extensions"
+	# install vscode extensions
+	sh $DOTFILES/.install/vscode.sh
+
+	success "Setting up VS Code Done."
 }
 
 setup_macos() {
@@ -201,6 +229,10 @@ setup_macos() {
 		echo "Enable Safari’s debug menu"
 		defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
+		echo "For VS Code"
+		defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+		defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+
 		echo "Kill affected applications"
 
 		for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
@@ -209,7 +241,7 @@ setup_macos() {
 	fi
 }
 
-select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "Install Fish and packages 🐟" "Install LTS Node and Install packages 📦" "Setup Git" "Setup Mac 👨‍💻" "Setup ALL 🐈‍⬛" "Quit ❌"; do
+select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "Install Fish and packages 🐟" "Install LTS Node and Install packages 📦" "Setup Git" "Setup VS Code" "Setup Mac 👨‍💻" "Setup ALL 🐈‍⬛" "Quit ❌"; do
 	case $option in
 	"Setup Symlinks ⬅️")
 		setup_symlinks
@@ -226,6 +258,9 @@ select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "I
 	"Setup Git")
 		setup_git
 		;;
+	"Setup VS Code")
+		setup_vscode
+		;;
 	"Setup Mac 👨‍💻")
 		setup_macos
 		;;
@@ -235,6 +270,7 @@ select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "I
 		setup_fish
 		setup_npm
 		setup_git
+		setup_vscode
 		setup_macos
 		break
 		;;

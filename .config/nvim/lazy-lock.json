@@ -11,7 +11,7 @@
   "cmp-tailwind-colors": { "branch": "main", "commit": "1d8dbec8549871914b536473249b9524f778f799" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "comment-box.nvim": { "branch": "main", "commit": "ca8b4c900915bc5c2ab22b93df30478b514341ba" },
-  "conform.nvim": { "branch": "master", "commit": "24d13dc1e2101d5450bcf20972db445363b52685" },
+  "conform.nvim": { "branch": "master", "commit": "0e61fc88f725b4411e63b43470a397c6102534c7" },
   "dashboard-nvim": { "branch": "master", "commit": "63df28409d940f9cac0a925df09d3dc369db9841" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "dressing.nvim": { "branch": "master", "commit": "94b0d24483d56f3777ee0c8dc51675f21709318c" },
