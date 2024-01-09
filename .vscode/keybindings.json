@@ -1,23 +1,23 @@
 [
   {
-    "key": "a",
-    "command": "explorer.newFile",
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+a",
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f",
     "command": "explorer.newFolder",
-    "when": "filesExplorerFocus && !inputFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
     "key": "r",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "d",
-    "command": "deleteFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
   {
     "key": "x",
@@ -34,13 +34,13 @@
     "command": "filesExplorer.paste",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
+  // Tab
   {
-    "key": "ctrl+;",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
+    "key": "tab",
+    "command": "workbench.action.nextEditor"
   },
   {
-    "key": "shift+alt+q",
-    "command": "workbench.action.terminal.kill"
+    "key": "shift+tab",
+    "command": "workbench.action.previousEditor"
   }
 ]
