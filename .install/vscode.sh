@@ -11,9 +11,10 @@ extensions=(
 
 	# themes & icons
 	"antfu.icons-carbon"
-	# "antfu.theme-vitesse"
+	"antfu.theme-vitesse"
 	"file-icons.file-icons"
 	"sainnhe.gruvbox-material"
+	"Catppuccin.catppuccin-vsc-icons"
 	"illixion.vscode-vibrancy-"
 
 	# life savers!
