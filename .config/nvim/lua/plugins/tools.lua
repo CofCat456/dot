@@ -128,4 +128,97 @@ return {
 			},
 		},
 	},
+
+	-- hex 2 rgba
+	{
+		"austinwilcox/hex2rgba",
+		keys = {
+			{
+				"<leader>cs",
+				function()
+					require("hex2rgba").hex2rgba()
+				end,
+				desc = "Hex2rgba",
+			},
+		},
+	},
+
+	-- package info
+	{
+		"vuki656/package-info.nvim",
+		event = "BufEnter package.json",
+		opts = {
+			colors = {
+				up_to_date = "#3C4048", -- Text color for up to date package virtual text
+				outdated = "#fc514e", -- Text color for outdated package virtual text
+			},
+			icons = {
+				enable = true, -- Whether to display icons
+				style = {
+					up_to_date = "|  ", -- Icon for up to date dependencies
+					outdated = "|  ", -- Icon for outdated dependencies
+				},
+			},
+			autostart = true, -- Whether to autostart when `package.json` is opened
+			hide_up_to_date = true, -- It hides up to date versions when displaying virtual text
+			hide_unstable_versions = true, -- It hides unstable versions from version list e.g next-11.1.3-canary3
+
+			-- Can be `npm` or `yarn`. Used for `delete`, `install` etc...
+			-- The plugin will try to auto-detect the package manager based on
+			-- `yarn.lock` or `package-lock.json`. If none are found it will use the
+			-- provided one,                              if nothing is provided it will use `yarn`
+			package_manager = "pnpm",
+		},
+		keys = {
+			{
+				"<leader>ns",
+				function()
+					require("package-info").show()
+				end,
+				desc = "Show dependency versions",
+			},
+			{
+				"<leader>nc",
+				function()
+					require("package-info").hide()
+				end,
+				desc = "Hide dependency versions",
+			},
+			{
+				"<leader>nt",
+				function()
+					require("package-info").toggle()
+				end,
+				desc = "Toggle dependency versions",
+			},
+			{
+				"<leader>nu",
+				function()
+					require("package-info").update()
+				end,
+				desc = "Update dependency on the line",
+			},
+			{
+				"<leader>nd",
+				function()
+					require("package-info").delete()
+				end,
+				desc = "Delete dependency on the line",
+			},
+			{
+				"<leader>ni",
+				function()
+					require("package-info").install()
+				end,
+				desc = "Install a new dependency",
+			},
+			{
+				"<leader>np",
+				function()
+					require("package-info").change_version()
+				end,
+				desc = "Install a different dependency version",
+			},
+		},
+	},
 }
