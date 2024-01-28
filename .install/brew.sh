@@ -41,6 +41,9 @@ brew install pyenv
 # json
 brew install jq
 
-brew install bat
-brew install hub
-brew install watchman
+# for nvim-spectre
+brew install gnu-sed
+
+# brew install bat
+# brew install hub
+# brew install watchman
