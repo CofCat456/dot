@@ -44,6 +44,12 @@ brew install jq
 # for nvim-spectre
 brew install gnu-sed
 
+# cask
+brew install --cask aldente
+brew install --cask rectangle
+brew install --cask visual-studio-code
+brew install --cask google-chrome
+
 # brew install bat
 # brew install hub
 # brew install watchman
