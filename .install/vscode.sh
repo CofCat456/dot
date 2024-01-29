@@ -14,7 +14,7 @@ extensions=(
 	"antfu.theme-vitesse"
 	"file-icons.file-icons"
 	"sainnhe.gruvbox-material"
-	"Catppuccin.catppuccin-vsc-icons"
+	"Catppuccin.catppuccin-vsc-pack"
 	"illixion.vscode-vibrancy-"
 
 	# life savers!
