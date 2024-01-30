@@ -35,10 +35,10 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
   // Tab
-  {
-    "key": "tab",
-    "command": "workbench.action.nextEditor"
-  },
+  // {
+  //   "key": "tab",
+  //   "command": "workbench.action.nextEditor"
+  // },
   {
     "key": "shift+tab",
     "command": "workbench.action.previousEditor"

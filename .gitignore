@@ -78,5 +78,8 @@ Pods/
 !.config/fish/conf.d/theme.fish
 !.config/fish/themes/
 
-# Karabiner
-.config/karabiner/automatic_backups
+# Theme
+**/themes/tokyonight_day.*
+**/themes/tokyonight_moon.*
+**/themes/tokyonight_night.*
+**/themes/tokyonight_storm.*

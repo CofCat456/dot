@@ -65,6 +65,12 @@ setup_symlinks() {
 			ln -s "$config" "$target"
 		fi
 	done
+
+	echo -e
+	info "installing gitconfig to ~/"
+	ln -s "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
+
+	success "Setting up Links Done."
 }
 
 setup_homebrew() {
@@ -73,7 +79,7 @@ setup_homebrew() {
 	if test ! "$(command -v brew)"; then
 		info "Homebrew not installed. Installing."
 		# Run as a login shell (non-interactive) so that the script doesn't pause for user input
-		curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash --login
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
 
 	# install brew dependencies
@@ -87,7 +93,12 @@ setup_fish() {
 
 	if test ! "$(command -v fish)"; then
 		info "Fish not installed. Installing."
-		brew install fish
+		return 1
+		if test ! "$(command -v brew)"; then
+			error "Homebrew not installed."
+		else
+			brew install fish
+		fi
 	fi
 
 	title "Add fish to the know shells run the command"
@@ -96,7 +107,7 @@ setup_fish() {
 	title "Set fish as the default shell"
 	chsh -s /opt/homebrew/bin/fish
 
-	if [ ! -f ~/.config/fish/functions/fisher.fish ]; then
+	if test ! "$(command -v fisher)"; then
 		info "Fisher not installed. Installing."
 		# Run as a login shell (non-interactive) so that the script doesn't pause for user input
 		curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
@@ -170,7 +181,9 @@ setup_vscode() {
 	done
 
 	if test ! "$(command -v code)"; then
-		warning "Code command not add. Adding."
+		info "Code command not add. Adding."
+
+		export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 	fi
 
 	info "Installing extensions"
@@ -241,7 +254,15 @@ setup_macos() {
 	fi
 }
 
-select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "Install Fish and packages 🐟" "Install LTS Node and Install packages 📦" "Setup Git" "Setup VS Code" "Setup Mac 👨‍💻" "Setup ALL 🐈‍⬛" "Quit ❌"; do
+fetch_tokyonight_theme() {
+	for palette in day moon night storm; do
+		curl -o "$DOTFILES/.config/kitty/themes/tokyonight_$palette.conf" "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/kitty/tokyonight_$palette.conf"
+		curl -o "$DOTFILES/.config/tmux/themes/tokyonight_$palette.tmux" "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/tmux/tokyonight_$palette.tmux"
+		curl -o "$DOTFILES/.config/fish/themes/tokyonight_$palette.fish" "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/fish/tokyonight_$palette.fish"
+	done
+}
+
+select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "Install Fish and packages 🐟" "Install LTS Node and Install packages 📦" "Setup Git" "Setup VS Code" "Setup Mac 👨‍💻" "Fetch_tokyonight_theme" "Setup ALL 🐈‍⬛" "Quit ❌"; do
 	case $option in
 	"Setup Symlinks ⬅️")
 		setup_symlinks
@@ -264,9 +285,13 @@ select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "I
 	"Setup Mac 👨‍💻")
 		setup_macos
 		;;
+	"Fetch_tokyonight_theme")
+		fetch_tokyonight_theme
+		;;
 	"Setup ALL 🐈‍⬛")
 		setup_symlinks
 		setup_homebrew
+		fetch_tokyonight_theme
 		setup_fish
 		setup_npm
 		setup_git
