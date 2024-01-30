@@ -22,7 +22,7 @@ CofCat = {
 		},
 	},
 	plugins = {
-		flash = true,
+		flash = false,
 		typescriptTools = true,
 	},
 	lsp = {
