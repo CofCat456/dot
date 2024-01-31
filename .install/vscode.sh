@@ -35,6 +35,7 @@ extensions=(
 	"znck.grammarly"
 	"KevinYang.ctlorem"
 	"bradlc.vscode-tailwindcss"
+	"Gruntfuggly.todo-tree"
 )
 
 for extension in "${extensions[@]}"; do
