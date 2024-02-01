@@ -49,6 +49,7 @@ brew install --cask aldente
 brew install --cask rectangle
 brew install --cask visual-studio-code
 brew install --cask google-chrome
+brew install --cask postman
 
 # brew install bat
 # brew install hub
