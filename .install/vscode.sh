@@ -12,10 +12,8 @@ extensions=(
 	# themes & icons
 	"antfu.icons-carbon"
 	"antfu.theme-vitesse"
-	"file-icons.file-icons"
 	"sainnhe.gruvbox-material"
-	"Catppuccin.catppuccin-vsc-pack"
-	"illixion.vscode-vibrancy-"
+	"catppuccin.catppuccin-vsc-icons"
 
 	# life savers!
 	"dbaeumer.vscode-eslint"
@@ -23,6 +21,12 @@ extensions=(
 	"GitHub.copilot"
 	"usernamehw.errorlens"
 	"streetsidesoftware.code-spell-checker"
+
+	# tailwindcss
+	"austenc.tailwind-docs"
+	"bradlc.vscode-tailwindcss"
+	"stivo.tailwind-fold"
+	"heybourn.headwind"
 
 	# up to you
 	"eamodio.gitlens"
@@ -33,8 +37,6 @@ extensions=(
 	"naumovs.color-highlight"
 	"WakaTime.vscode-wakatime"
 	"znck.grammarly"
-	"KevinYang.ctlorem"
-	"bradlc.vscode-tailwindcss"
 	"Gruntfuggly.todo-tree"
 )
 
