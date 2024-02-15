@@ -18,6 +18,8 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
+
+  // ========== Editor ========== 
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
@@ -29,11 +31,6 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never",
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.eol": "\n",
@@ -78,12 +75,14 @@
     "**/CHANGELOG*": true,
     "**/LICENSE*": true,
   },
+
   // ==========  Global Level Config, needs to put in User Settings ========== 
   "window.dialogStyle": "custom",
   "window.nativeTabs": true, // this is great, macOS only
   "window.title": "${rootName}", // this make tabs more readable
   "window.titleBarStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
+
   // ========== Extension configs ========== 
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
@@ -96,6 +95,7 @@
     "Grammarly",
     "eslint"
   ],
+
   // Vim
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -273,11 +273,25 @@
       "type": "text-and-comment"
     }
   },
+
+  // ========== Eslint ==========
   // ESLint config: https://github.com/antfu/eslint-config
+
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
   "eslint.quiet": true,
+
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
     {
@@ -334,10 +348,20 @@
     "yaml",
     "toml"
   ],
+  // I only use Prettier for manually formatting
+  "editor.formatOnSave": false,
+  "prettier.enable": false,
+  "prettier.printWidth": 200,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
     "plaintext": false,
+  },
+  // Fix Tailwind bug
+  "editor.quickSuggestions": {
+    "strings": "on"
   },
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
@@ -396,11 +420,7 @@
   "iconify.annotations": true,
   "iconify.inplace": true,
   "svg.preview.mode": "svg",
-  // I only use Prettier for manually formatting
-  "prettier.enable": false,
-  "prettier.printWidth": 200,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
+
   // ========== File Nesting ==========
   // this might not be up to date with the repo, please check yourself
   // https://github.com/antfu/vscode-file-nesting-config
