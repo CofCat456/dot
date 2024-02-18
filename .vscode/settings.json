@@ -96,6 +96,10 @@
     "eslint"
   ],
 
+  // Volar
+  "vue.server.additionalExtensions": ["svg", "vue"],
+  "vue.complete.normalizeComponentImportName": true,
+
   // Vim
   "vim.easymotion": true,
   "vim.incsearch": true,
