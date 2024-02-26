@@ -116,7 +116,23 @@ setup_fish() {
 	# install fish dependencies
 	/opt/homebrew/bin/fish $DOTFILES/.install/fish.fish
 
+  fish_add_path /opt/homebrew/bin
+
 	success "Setting up Fish Done."
+}
+
+setup_tmux() {
+	title "Setting up Tmux"
+
+	if test ! "$(command -v ide)"; then
+		info "Ide command not add. Adding."
+
+		ln -s "$DOTFILES/.scripts" ~/bin
+
+		chmod +x ~/bin/ide
+	fi
+
+	success "Setting up Tmux Done."
 }
 
 setup_npm() {
@@ -168,17 +184,30 @@ setup_git() {
 setup_vscode() {
 	title "Setting up VS Code"
 
-	info "Creating symlink for setting.json"
-	config_files=$(find "$DOTFILES/.vscode" -type f -maxdepth 1 2>/dev/null)
-	for config in $config_files; do
-		target="$HOME/Library/Application Support/Code/User/$(basename "$config")"
-		if [ -e "$target" ]; then
-			info "~${target#$HOME} already exists... Skipping."
-		else
-			info "Creating symlink for $config"
-			ln -s "$config" "$target"
-		fi
-	done
+	info "Creating symlink for setting.json & keybindings.json"
+  config_files=$(find "$DOTFILES/.vscode" -type f \( -name "settings.json" -o -name "keybindings.json" \) 2>/dev/null)
+  for config in $config_files; do
+      target="$HOME/Library/Application Support/Code/User/$(basename "$config")"
+      if [ -e "$target" ]; then
+          info "~${target#$HOME} already exists... Skipping."
+      else
+          info "Creating symlink for $config"
+          ln -s "$config" "$target"
+      fi
+  done
+
+
+	info "Creating symlink for global.code-snippets"
+  config_files=$(find "$DOTFILES/.vscode" -type f -name "global.code-snippets" 2>/dev/null)
+  for config in $config_files; do
+      target="$HOME/Library/Application Support/Code/User/snippets/$(basename "$config")"
+      if [ -e "$target" ]; then
+          info "~${target#$HOME} already exists... Skipping."
+      else
+          info "Creating symlink for $config"
+          ln -s "$config" "$target"
+      fi
+  done
 
 	if test ! "$(command -v code)"; then
 		info "Code command not add. Adding."
@@ -262,7 +291,7 @@ fetch_tokyonight_theme() {
 	done
 }
 
-select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "Install Fish and packages 🐟" "Install LTS Node and Install packages 📦" "Setup Git" "Setup VS Code" "Setup Mac 👨‍💻" "Fetch_tokyonight_theme" "Setup ALL 🐈‍⬛" "Quit ❌"; do
+select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "Install Fish and packages 🐟" "Install LTS Node and Install packages 📦" "Setup Git" "Setup VS Code" "Setup Tmux" "Setup Mac 👨‍💻" "Fetch_tokyonight_theme" "Setup ALL 🐈‍⬛" "Quit ❌"; do
 	case $option in
 	"Setup Symlinks ⬅️")
 		setup_symlinks
@@ -282,6 +311,9 @@ select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "I
 	"Setup VS Code")
 		setup_vscode
 		;;
+	"Setup Tmux")
+		setup_tmux
+		;;
 	"Setup Mac 👨‍💻")
 		setup_macos
 		;;
@@ -293,6 +325,7 @@ select option in "Setup Symlinks ⬅️" "Install Homebrew and packages 🍺" "I
 		setup_homebrew
 		fetch_tokyonight_theme
 		setup_fish
+		setup_tmux
 		setup_npm
 		setup_git
 		setup_vscode

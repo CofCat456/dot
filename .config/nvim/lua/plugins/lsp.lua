@@ -84,13 +84,13 @@ return {
 					end,
 				},
 				volar = {
-					-- capabilities = require("utils.volar").capabilities,
+					capabilities = require("utils.lsp.volar").capabilities,
 					filetypes = require("utils.lsp.volar").filetypes,
-					root_dir = require("utils.lsp.volar").root_dir,
-					-- init_options = require("utils.volar").init_options,
-					on_new_config = require("utils.lsp.volar").on_new_config,
-					settings = require("utils.lsp.volar").settings,
+					init_options = require("utils.lsp.volar").init_options,
 					on_attach = require("utils.lsp.volar").on_attach,
+					on_new_config = require("utils.lsp.volar").on_new_config,
+					root_dir = require("utils.lsp.volar").root_dir,
+					settings = require("utils.lsp.volar").settings,
 				},
 				html = {},
 				emmet_ls = {

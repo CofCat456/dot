@@ -200,28 +200,18 @@ return {
 		},
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
 	},
-	{
-		"MaximilianLloyd/tw-values.nvim",
-		opts = {
-			border = CofCat.ui.float.border or "rounded", -- Valid window border style,
-			show_unknown_classes = true, -- Shows the unknown classes popup
-		},
-		keys = {
-			{ "<Leader>cv", "<CMD>TWValues<CR>", desc = "Tailwind CSS values" },
-		},
-	},
-	{
-		"laytan/tailwind-sorter.nvim",
-		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("tailwind-sorter").setup({
-				on_save_pattern = { "*.html", "*.jsx", "*.tsx", ".vue" },
-			})
-		end,
-		build = "cd formatter && npm i && npm run build",
-		cmd = {
-			"TailwindSort",
-			"TailwindSortOnSaveToggle",
-		},
-	},
+	-- {
+	-- 	"MaximilianLloyd/tw-values.nvim",
+	-- 	opts = {
+	-- 		border = CofCat.ui.float.border or "rounded", -- Valid window border style,
+	-- 		show_unknown_classes = true, -- Shows the unknown classes popup
+	-- 	},
+	-- 	keys = {
+	-- 		{
+	-- 			"<Leader>tv",
+	-- 			"<CMD>TWValues<CR>",
+	-- 			desc = "Tailwind CSS values",
+	-- 		},
+	-- 	},
+	-- }
 }

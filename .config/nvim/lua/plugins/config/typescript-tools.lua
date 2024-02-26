@@ -28,24 +28,26 @@ local handlers = {
 }
 
 require("typescript-tools").setup({
-	on_attach = function(_client, bufnr)
+	on_attach = function(client, bufnr)
+		-- NOTE: close volar format
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+
 		if vim.fn.has("nvim-0.10") then
 			-- Enable inlay hints
-			vim.lsp.inlay_hint(bufnr, true)
+			vim.lsp.inlay_hint.enable(bufnr, true)
 		end
 	end,
 	handlers = handlers,
 	settings = {
 		separate_diagnostic_server = true,
 		composite_mode = "separate_diagnostic",
+		publish_diagnostic_on = "insert_leave",
 		tsserver_file_preferences = {
 			importModuleSpecifierPreference = "non-relative",
 			includeInlayParameterNameHints = "all",
 			includeCompletionsForModuleExports = true,
 			quotePreference = "auto",
-		},
-		tsserver_plugins = {
-			"@styled/typescript-styled-plugin",
 		},
 	},
 })
