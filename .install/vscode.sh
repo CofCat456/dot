@@ -23,13 +23,9 @@ extensions=(
 	"streetsidesoftware.code-spell-checker"
 
 	# tailwindcss
-	"austenc.tailwind-docs"
 	"bradlc.vscode-tailwindcss"
-	"stivo.tailwind-fold"
-	"heybourn.headwind"
 
 	# up to you
-	"eamodio.gitlens"
 	"EditorConfig.EditorConfig"
 	"github.vscode-github-actions"
 	"GitHub.vscode-pull-request-github"

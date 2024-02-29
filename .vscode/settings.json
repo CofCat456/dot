@@ -182,22 +182,22 @@
   "todo-tree.general.tags": ["TODO", "FIXME", "TEST"],
   "todo-tree.highlights.customHighlight": {
     "TODO": {
-      "background": "#f5c018",
+      "background": "#2563EB",
       "foreground": "#000",
-      "iconColour": "#f5c018",
+      "iconColour": "#2563EB",
       "icon": "check",
       "type": "text-and-comment"
     },
     "FIXME": {
-      "background": "#d9444a",
+      "background": "#DC2626",
       "foreground": "#000",
-      "iconColour": "#d9444a",
+      "iconColour": "#DC2626",
       "type": "text-and-comment"
     },
     "TEST": {
-      "background": "#10B981",
+      "background": "#FF00FF",
       "foreground": "#000",
-      "iconColour": "#10B981",
+      "iconColour": "#FF00FF",
       "type": "text-and-comment"
     }
   },
