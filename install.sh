@@ -284,7 +284,24 @@ setup_macos() {
 }
 
 fetch_tokyonight_theme() {
+	# 檢查目錄是否存在
+	if [ ! -d "$DOTFILES/.config/kitty/themes" ]; then
+			warning "kitty themes 目錄不存在，建立目錄"
+			mkdir -p "$DOTFILES/.config/kitty/themes"
+	fi
+
+	if [ ! -d "$DOTFILES/.config/tmux/themes" ]; then
+			warning "tmux themes 目錄不存在，建立目錄"
+			mkdir -p "$DOTFILES/.config/tmux/themes"
+	fi
+
+	if [ ! -d "$DOTFILES/.config/fish/themes" ]; then
+			warning "fish themes 目錄不存在，建立目錄"
+			mkdir -p "$DOTFILES/.config/fish/themes"
+	fi
+
 	for palette in day moon night storm; do
+		echo palette
 		curl -o "$DOTFILES/.config/kitty/themes/tokyonight_$palette.conf" "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/kitty/tokyonight_$palette.conf"
 		curl -o "$DOTFILES/.config/tmux/themes/tokyonight_$palette.tmux" "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/tmux/tokyonight_$palette.tmux"
 		curl -o "$DOTFILES/.config/fish/themes/tokyonight_$palette.fish" "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/fish/tokyonight_$palette.fish"

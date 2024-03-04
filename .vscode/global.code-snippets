@@ -89,5 +89,12 @@
       "</tr>",
       "</table>",
     ],
-  }
+  },
+  "i18n": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "18n",
+    "body": [
+      "const { t } = useI18n()",
+    ]
+  },
 }

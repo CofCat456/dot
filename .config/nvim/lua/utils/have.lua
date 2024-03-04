@@ -42,15 +42,11 @@ end
 
 -- Is Vue Project
 M.have_vue = function()
-	return is_npm_package_installed("vue")
+	return is_npm_package_installed("vue") or is_npm_package_installed("vite")
 end
 
 M.have_tailwindcss = function()
 	return is_npm_package_installed("tailwindcss")
-end
-
-M.enabled_typescript_tools = function()
-	return not is_npm_package_installed("vue")
 end
 
 return M

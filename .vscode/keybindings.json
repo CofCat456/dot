@@ -1,9 +1,9 @@
 [
   {
-    "key": "space e",
-    "command": "workbench.action.toggleSidebarVisibility",
+		"key": "space e",
+		"command": "workbench.view.explorer",
     "when": "filesExplorerFocus && !inputFocus"
-  },
+	},
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -53,9 +53,8 @@
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
-  // Project Manger
   {
-    "key": "cmd+o",
-    "command": "projectManager.listProjects"
+    "key": "alt+cmd+o",
+    "command": "projectManager.listProjectsNewWindow"
   }
 ]

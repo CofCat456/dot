@@ -3,7 +3,7 @@ return {
 		"pmizio/typescript-tools.nvim",
 		enabled = CofCat.plugins.typescriptTools,
 		event = { "BufReadPre", "BufNewFile" },
-		cond = require("utils.have").enabled_typescript_tools(),
+		cond = not require("utils.have").have_vue(),
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 		config = function()
