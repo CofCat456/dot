@@ -3,7 +3,6 @@ return {
 		"pmizio/typescript-tools.nvim",
 		enabled = CofCat.plugins.typescriptTools,
 		event = { "BufReadPre", "BufNewFile" },
-		cond = not require("utils.have").have_vue(),
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 		config = function()
@@ -64,7 +63,6 @@ return {
 				"shellcheck",
 				"shfmt",
 				"tailwindcss-language-server",
-				"vue-language-server",
 				"css-lsp",
 			})
 		end,
@@ -73,6 +71,18 @@ return {
 	-- lsp servers
 	{
 		"neovim/nvim-lspconfig",
+		init = function()
+			local keys = require("lazyvim.plugins.lsp.keymaps").get()
+			keys[#keys + 1] = {
+				"gd",
+				function()
+					-- DO NOT RESUSE WINDOW
+					require("telescope.builtin").lsp_definitions({ reuse_win = false })
+				end,
+				desc = "Goto Definition",
+				has = "definition",
+			}
+		end,
 		opts = {
 			inlay_hints = { enabled = true },
 			---@type lspconfig.options
@@ -82,15 +92,6 @@ return {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
-				},
-				volar = {
-					capabilities = require("utils.lsp.volar").capabilities,
-					filetypes = require("utils.lsp.volar").filetypes,
-					init_options = require("utils.lsp.volar").init_options,
-					on_attach = require("utils.lsp.volar").on_attach,
-					on_new_config = require("utils.lsp.volar").on_new_config,
-					root_dir = require("utils.lsp.volar").root_dir,
-					settings = require("utils.lsp.volar").settings,
 				},
 				html = {},
 				emmet_ls = {

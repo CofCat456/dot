@@ -29,7 +29,7 @@ local handlers = {
 
 require("typescript-tools").setup({
 	on_attach = function(client, bufnr)
-		-- NOTE: close volar format
+		-- NOTE: close format
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
 
@@ -39,6 +39,15 @@ require("typescript-tools").setup({
 		end
 	end,
 	handlers = handlers,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+		"vue",
+	},
 	settings = {
 		separate_diagnostic_server = true,
 		composite_mode = "separate_diagnostic",
@@ -48,6 +57,9 @@ require("typescript-tools").setup({
 			includeInlayParameterNameHints = "all",
 			includeCompletionsForModuleExports = true,
 			quotePreference = "auto",
+		},
+		tsserver_plugins = {
+			"@vue/typescript-plugin",
 		},
 	},
 })
