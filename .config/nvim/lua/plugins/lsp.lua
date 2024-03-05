@@ -64,6 +64,7 @@ return {
 				"shfmt",
 				"tailwindcss-language-server",
 				"css-lsp",
+				"vue-language-server",
 			})
 		end,
 	},

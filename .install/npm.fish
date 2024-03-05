@@ -12,3 +12,7 @@ npm i -g typescript
 
 echo "Installing a ni"
 npm i -g @antfu/ni
+
+# for vue project
+echo "Installing a volar lsp server"
+npm i -g @vue/typescript-plugin

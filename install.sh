@@ -116,7 +116,7 @@ setup_fish() {
 	# install fish dependencies
 	/opt/homebrew/bin/fish $DOTFILES/.install/fish.fish
 
-  fish_add_path /opt/homebrew/bin
+	fish_add_path /opt/homebrew/bin
 
 	success "Setting up Fish Done."
 }
@@ -185,29 +185,28 @@ setup_vscode() {
 	title "Setting up VS Code"
 
 	info "Creating symlink for setting.json & keybindings.json"
-  config_files=$(find "$DOTFILES/.vscode" -type f \( -name "settings.json" -o -name "keybindings.json" \) 2>/dev/null)
-  for config in $config_files; do
-      target="$HOME/Library/Application Support/Code/User/$(basename "$config")"
-      if [ -e "$target" ]; then
-          info "~${target#$HOME} already exists... Skipping."
-      else
-          info "Creating symlink for $config"
-          ln -s "$config" "$target"
-      fi
-  done
-
+	config_files=$(find "$DOTFILES/.vscode" -type f \( -name "settings.json" -o -name "keybindings.json" \) 2>/dev/null)
+	for config in $config_files; do
+		target="$HOME/Library/Application Support/Code/User/$(basename "$config")"
+		if [ -e "$target" ]; then
+			info "~${target#$HOME} already exists... Skipping."
+		else
+			info "Creating symlink for $config"
+			ln -s "$config" "$target"
+		fi
+	done
 
 	info "Creating symlink for global.code-snippets"
-  config_files=$(find "$DOTFILES/.vscode" -type f -name "global.code-snippets" 2>/dev/null)
-  for config in $config_files; do
-      target="$HOME/Library/Application Support/Code/User/snippets/$(basename "$config")"
-      if [ -e "$target" ]; then
-          info "~${target#$HOME} already exists... Skipping."
-      else
-          info "Creating symlink for $config"
-          ln -s "$config" "$target"
-      fi
-  done
+	config_files=$(find "$DOTFILES/.vscode" -type f -name "global.code-snippets" 2>/dev/null)
+	for config in $config_files; do
+		target="$HOME/Library/Application Support/Code/User/snippets/$(basename "$config")"
+		if [ -e "$target" ]; then
+			info "~${target#$HOME} already exists... Skipping."
+		else
+			info "Creating symlink for $config"
+			ln -s "$config" "$target"
+		fi
+	done
 
 	if test ! "$(command -v code)"; then
 		info "Code command not add. Adding."
@@ -286,18 +285,18 @@ setup_macos() {
 fetch_tokyonight_theme() {
 	# 檢查目錄是否存在
 	if [ ! -d "$DOTFILES/.config/kitty/themes" ]; then
-			warning "kitty themes 目錄不存在，建立目錄"
-			mkdir -p "$DOTFILES/.config/kitty/themes"
+		warning "kitty themes 目錄不存在，建立目錄"
+		mkdir -p "$DOTFILES/.config/kitty/themes"
 	fi
 
 	if [ ! -d "$DOTFILES/.config/tmux/themes" ]; then
-			warning "tmux themes 目錄不存在，建立目錄"
-			mkdir -p "$DOTFILES/.config/tmux/themes"
+		warning "tmux themes 目錄不存在，建立目錄"
+		mkdir -p "$DOTFILES/.config/tmux/themes"
 	fi
 
 	if [ ! -d "$DOTFILES/.config/fish/themes" ]; then
-			warning "fish themes 目錄不存在，建立目錄"
-			mkdir -p "$DOTFILES/.config/fish/themes"
+		warning "fish themes 目錄不存在，建立目錄"
+		mkdir -p "$DOTFILES/.config/fish/themes"
 	fi
 
 	for palette in day moon night storm; do
