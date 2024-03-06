@@ -9,7 +9,7 @@
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "boundary",
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Vitesse Dark",
   "workbench.editor.tabActionLocation": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "catppuccin-macchiato",
@@ -130,12 +130,6 @@
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [],
   "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.color": "rgba(0, 201, 255, 1)",
-  "vim.highlightedyank.textColor": "rgba(255, 255, 255, 1)",
-  "vim.autoSwitchInputMethod.enable": true,
-  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
-  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
-  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
