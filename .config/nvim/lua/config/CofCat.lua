@@ -9,21 +9,20 @@
 local theme = {
 	tokyonight = "tokyonight",
 	catppuccin = "catppuccin",
-	solarized_osaka = "solarized-osaka",
 }
 
 CofCat = {
-	--- @usage 'tokyonight' | 'catppuccin' | 'solarized-osaka'
+	--- @usage 'tokyonight' | 'catppuccin'
 	colorscheme = theme.tokyonight,
 	ui = {
-		transparent = true,
+		transparent = false,
 		float = {
 			border = "rounded",
 		},
 	},
 	plugins = {
-		flash = false,
-		typescriptTools = true,
+		flash = true,
+		typescriptTools = false,
 	},
 	lsp = {
 		virtual_text = true, -- show virtual text (errors, warnings, info) inline messages

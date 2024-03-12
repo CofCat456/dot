@@ -1,15 +1,4 @@
 return {
-	{
-		"pmizio/typescript-tools.nvim",
-		enabled = CofCat.plugins.typescriptTools,
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
-		config = function()
-			require("plugins.config.typescript-tools")
-		end,
-	},
-
 	-- glance
 	{
 		"dnlhc/glance.nvim",
@@ -40,59 +29,95 @@ return {
 				desc = "LSP Type Definitions",
 			}
 		end,
-		config = function()
-			require("plugins.config.glance")
-		end,
+		config = true,
 		cmd = { "Glance" },
-	},
-
-	-- tools
-	{
-		"williamboman/mason.nvim",
-		opts = function(_, opts)
-			require("mason").setup({
-				ui = {
-					border = "rounded",
-				},
-			})
-
-			vim.list_extend(opts.ensure_installed, {
-				"stylua",
-				"selene",
-				"luacheck",
-				"shellcheck",
-				"shfmt",
-				"tailwindcss-language-server",
-				"css-lsp",
-				"vue-language-server",
-			})
-		end,
 	},
 
 	-- lsp servers
 	{
 		"neovim/nvim-lspconfig",
-		init = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-			keys[#keys + 1] = {
-				"gd",
-				function()
-					-- DO NOT RESUSE WINDOW
-					require("telescope.builtin").lsp_definitions({ reuse_win = false })
-				end,
-				desc = "Goto Definition",
-				has = "definition",
-			}
-		end,
 		opts = {
 			inlay_hints = { enabled = true },
 			---@type lspconfig.options
 			servers = {
 				cssls = {},
 				tailwindcss = {
+					root_dir = function(fname)
+						local root_pattern = require("lspconfig").util.root_pattern(
+							"tailwind.config.cjs",
+							"tailwind.config.js",
+							"postcss.config.js"
+						)
+						return root_pattern(fname)
+					end,
+				},
+				-- volar = {
+				-- 	root_dir = function(...)
+				-- 		return require("lspconfig.util").root_pattern(".git")(...)
+				-- 	end,
+				-- 	settings = {
+				-- 		vue = {
+				-- 			complete = {
+				-- 				casing = {
+				-- 					props = "autoKebab",
+				-- 					tags = "autoPascal",
+				-- 				},
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
+				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
+					single_file_support = false,
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"javascript.jsx",
+						"typescript",
+						"typescriptreact",
+						"typescript.tsx",
+						"vue",
+					},
+					init_options = {
+						hostInfo = "neovim",
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = require("utils.getPath").get_npm_global_path() .. "/@vue/typescript-plugin",
+								-- location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
+								languages = {
+									"vue",
+								},
+							},
+						},
+					},
+					settings = {
+						typescript = {
+							inlayHints = {
+								importModuleSpecifierPreference = "non-relative",
+								includeInlayParameterNameHints = "literal",
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = false,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							},
+						},
+						javascript = {
+							inlayHints = {
+								includeInlayParameterNameHints = "all",
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = true,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							},
+						},
+					},
 				},
 				html = {},
 				emmet_ls = {
@@ -100,13 +125,6 @@ return {
 						"html",
 					},
 				},
-				-- yamlls = {
-				-- 	settings = {
-				-- 		yaml = {
-				-- 			keyOrdering = false,
-				-- 		},
-				-- 	},
-				-- },
 				lua_ls = {
 					-- enabled = false,
 					single_file_support = true,
@@ -180,9 +198,34 @@ return {
 							client.server_capabilities.documentFormattingProvider = true
 						elseif client.name == "tsserver" then
 							client.server_capabilities.documentFormattingProvider = false
+						elseif client.name == "volar" then
+							client.server_capabilities.documentFormattingProvider = false
 						end
 					end)
 				end,
+			},
+		},
+	},
+
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				["javascript"] = { { "prettierd", "prettier" } },
+				["typescript"] = { { "prettierd", "prettier" } },
+				["javascriptreact"] = { { "prettierd", "prettier" } },
+				["typescriptreact"] = { { "prettierd", "prettier" } },
+				["vue"] = { { "prettierd", "prettier" } },
+			},
+			formatters = {
+				-- Dealing with old version of prettierd that doesn't support range formatting
+				prettier = {
+					cwd = require("conform.util").root_file({
+						".prettier.config.js",
+						".prettierrc.json",
+					}),
+					require_cwd = true,
+				},
 			},
 		},
 	},

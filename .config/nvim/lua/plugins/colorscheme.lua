@@ -1,17 +1,4 @@
 return {
-	-- solarized-osaka
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		enabled = CofCat.colorscheme == "solarized-osaka",
-		opts = function()
-			return {
-				transparent = true,
-			}
-		end,
-		priority = 1000,
-	},
-
 	--  tokyonight
 	{
 		"folke/tokyonight.nvim",

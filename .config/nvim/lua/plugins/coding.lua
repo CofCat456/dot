@@ -26,8 +26,6 @@ return {
 	-- Refactoring tool
 	{
 		"ThePrimeagen/refactoring.nvim",
-		enabled = false,
-		opts = {},
 		keys = {
 			{
 				"<leader>r",
@@ -40,14 +38,22 @@ return {
 				expr = false,
 			},
 		},
+		opts = {},
 	},
 
 	{
 		"Wansmer/treesj",
 		keys = {
-			{ "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+			{
+				"J",
+				"<cmd>TSJToggle<cr>",
+				desc = "Join Toggle",
+			},
 		},
-		opts = { use_default_keymaps = false, max_join_length = 150 },
+		opts = {
+			use_default_keymaps = false,
+			max_join_length = 150,
+		},
 	},
 
 	{
@@ -64,6 +70,35 @@ return {
 					})
 				end,
 			},
+			{
+				"hrsh7th/cmp-emoji",
+			},
+		},
+		opts = function(_, opts)
+			table.insert(opts.sources, { name = "emoji" })
+		end,
+	},
+
+	{
+		"cshuaimin/ssr.nvim",
+		keys = {
+			{
+				"<leader>sR",
+				function()
+					require("ssr").open()
+				end,
+				mode = { "n", "x" },
+				desc = "Structural Replace",
+			},
+		},
+	},
+
+	{
+		"simrat39/symbols-outline.nvim",
+		keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+		cmd = "SymbolsOutline",
+		opts = {
+			position = "right",
 		},
 	},
 }

@@ -9,6 +9,8 @@ fisher install IlanCosman/tide@v6
 
 echo "Installing nvm"
 fisher install jorgebucaran/nvm.fish
+nvm install lts
+nvm use lts
 
 echo "Installing fzf"
 fisher install PatrickF1/fzf.fish

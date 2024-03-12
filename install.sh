@@ -138,12 +138,6 @@ setup_tmux() {
 setup_npm() {
 	title "Setting up Npm"
 
-	if test ! "$(command -v npm)"; then
-		info "nvm not installed. Installing."
-		nvm install lts
-		nvm use lts
-	fi
-
 	title "Installing npm packages"
 
 	# install plugins

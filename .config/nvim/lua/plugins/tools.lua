@@ -32,15 +32,6 @@ return {
 		end,
 	},
 
-	{
-		"LudoPinelli/comment-box.nvim",
-		lazy = false,
-		keys = {
-			{ "<leader>ac", "<cmd>lua require('comment-box').llbox()<CR>", desc = "comment box" },
-			{ "<leader>ac", "<cmd>lua require('comment-box').llbox()<CR>", mode = "v", desc = "comment box" },
-		},
-	},
-
 	-- switch boolean
 	{
 		"AndrewRadev/switch.vim",
@@ -79,5 +70,11 @@ return {
 				end,
 			},
 		},
+	},
+
+	{
+		"dmmulroy/tsc.nvim",
+		cmd = { "TSC" },
+		config = true,
 	},
 }

@@ -13,7 +13,7 @@ catppuccin.setup({
 		light = "latte",
 		dark = "mocha",
 	},
-	transparent_background = true, -- disables setting the background color.
+	transparent_background = false, -- disables setting the background color.
 	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
 	term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
 	dim_inactive = {
@@ -37,6 +37,7 @@ catppuccin.setup({
 		properties = {},
 		types = {},
 		operators = {},
+		-- miscs = {}, -- Uncomment to turn off hard-coded styles
 	},
 	color_overrides = {},
 	custom_highlights = {},
@@ -45,7 +46,7 @@ catppuccin.setup({
 		gitsigns = true,
 		nvimtree = true,
 		treesitter = true,
-		notify = true,
+		notify = false,
 		mini = {
 			enabled = true,
 			indentscope_color = "",

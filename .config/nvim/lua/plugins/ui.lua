@@ -125,4 +125,48 @@ return {
 			opts.config.header = vim.split(logo, "\n")
 		end,
 	},
+
+	-- ui
+	{
+		"hrsh7th/nvim-cmp",
+		opts = function(_, opts)
+			local cmp = require("cmp")
+			opts.window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+			}
+		end,
+	},
+	{
+		"mason.nvim",
+		opts = {
+			ui = {
+				border = CofCat.ui.float,
+			},
+		},
+	},
+	{
+		"folke/noice.nvim",
+		opts = {
+			presets = {
+				lsp_doc_border = true,
+			},
+		},
+	},
+	{
+		"stevearc/dressing.nvim",
+		opts = {
+			input = {
+				border = CofCat.ui.float,
+			},
+			select = {
+				nui = {
+					border = CofCat.ui.float,
+				},
+				builtin = {
+					border = CofCat.ui.float,
+				},
+			},
+		},
+	},
 }

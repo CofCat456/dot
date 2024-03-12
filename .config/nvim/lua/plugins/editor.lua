@@ -126,6 +126,7 @@ return {
 				layout_config = { prompt_position = "top" },
 				sorting_strategy = "ascending",
 				winblend = 0,
+				border = CofCat.ui.float,
 				mappings = {
 					n = {},
 				},
@@ -190,28 +191,16 @@ return {
 	-- tailwind
 	{
 		"js-everts/cmp-tailwind-colors",
+		enabled = require("utils.have").have_tailwindcss(),
 		config = true,
 	},
 	{
 		"razak17/tailwind-fold.nvim",
+		enabled = require("utils.have").have_tailwindcss(),
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {
 			min_chars = 50,
 		},
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
 	},
-	-- {
-	-- 	"MaximilianLloyd/tw-values.nvim",
-	-- 	opts = {
-	-- 		border = CofCat.ui.float.border or "rounded", -- Valid window border style,
-	-- 		show_unknown_classes = true, -- Shows the unknown classes popup
-	-- 	},
-	-- 	keys = {
-	-- 		{
-	-- 			"<Leader>tv",
-	-- 			"<CMD>TWValues<CR>",
-	-- 			desc = "Tailwind CSS values",
-	-- 		},
-	-- 	},
-	-- }
 }
