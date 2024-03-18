@@ -51,21 +51,7 @@ return {
 						return root_pattern(fname)
 					end,
 				},
-				-- volar = {
-				-- 	root_dir = function(...)
-				-- 		return require("lspconfig.util").root_pattern(".git")(...)
-				-- 	end,
-				-- 	settings = {
-				-- 		vue = {
-				-- 			complete = {
-				-- 				casing = {
-				-- 					props = "autoKebab",
-				-- 					tags = "autoPascal",
-				-- 				},
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				volar = {},
 				tsserver = {
 					single_file_support = false,
 					filetypes = {
@@ -82,7 +68,7 @@ return {
 						plugins = {
 							{
 								name = "@vue/typescript-plugin",
-								location = require("utils.getPath").get_npm_global_path() .. "/@vue/typescript-plugin",
+								location = "/Users/cofcat/.local/share/nvm/v20.11.1/lib/node_modules/@vue/typescript-plugin",
 								-- location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
 								languages = {
 									"vue",
