@@ -20,4 +20,26 @@ return {
 		end,
 		priority = 1000,
 	},
+
+	-- Kanagawa
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		enabled = CofCat.colorscheme == "kanagawa",
+		build = ":KanagawaCompile",
+		opts = {
+			compile = true,
+			dimInactive = true,
+			colors = {
+				theme = {
+					all = {
+						ui = {
+							bg_gutter = "none",
+						},
+					},
+				},
+			},
+		},
+		priority = 1000,
+	},
 }
