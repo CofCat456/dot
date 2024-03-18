@@ -140,6 +140,12 @@ return {
 		end,
 	},
 
+	{
+		"b0o/incline.nvim",
+		event = "VeryLazy",
+		config = true,
+	},
+
 	-- dashboard
 	{
 		"nvimdev/dashboard-nvim",
