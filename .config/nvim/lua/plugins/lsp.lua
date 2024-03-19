@@ -79,7 +79,6 @@ return {
 					settings = {
 						typescript = {
 							inlayHints = {
-								importModuleSpecifierPreference = "non-relative",
 								includeInlayParameterNameHints = "literal",
 								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
 								includeInlayFunctionParameterTypeHints = true,
