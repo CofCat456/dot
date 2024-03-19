@@ -39,6 +39,11 @@ return {
 					},
 				},
 			},
+			theme = "dragon",
+			background = {
+				dark = "dragon",
+				light = "lotus",
+			},
 		},
 		priority = 1000,
 	},
