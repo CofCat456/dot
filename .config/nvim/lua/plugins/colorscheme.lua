@@ -30,6 +30,11 @@ return {
 		opts = {
 			compile = true,
 			dimInactive = true,
+			commentStyle = { italic = false },
+			functionStyle = { italic = false },
+			keywordStyle = { italic = false },
+			typeStyle = { italic = false },
+			statementStyle = { italic = false, bold = true },
 			colors = {
 				theme = {
 					all = {
@@ -39,11 +44,11 @@ return {
 					},
 				},
 			},
-			theme = "dragon",
-			background = {
-				dark = "dragon",
-				light = "lotus",
-			},
+			overrides = function()
+				return {
+					["@variable.builtin"] = { italic = false },
+				}
+			end,
 		},
 		priority = 1000,
 	},
