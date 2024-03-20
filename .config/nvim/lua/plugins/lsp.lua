@@ -68,7 +68,7 @@ return {
 						plugins = {
 							{
 								name = "@vue/typescript-plugin",
-								location = "/Users/cofcat/.local/share/nvm/v20.11.1/lib/node_modules/@vue/typescript-plugin",
+								location = require("utils.getPath").get_npm_global_path() .. "/@vue/typescript-plugin",
 								-- location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
 								languages = {
 									"vue",
