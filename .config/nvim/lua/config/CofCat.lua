@@ -9,12 +9,12 @@
 local theme = {
 	tokyonight = "tokyonight",
 	catppuccin = "catppuccin",
-	kanagawa = "kanagawa",
+	everforest = "everforest",
 }
 
 CofCat = {
-	--- @usage 'tokyonight' | 'catppuccin' | 'kanagawa'
-	colorscheme = theme.kanagawa,
+	--- @usage 'tokyonight' | 'catppuccin' | 'evetforest'
+	colorscheme = theme.everforest,
 	ui = {
 		transparent = false,
 		float = {

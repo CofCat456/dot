@@ -21,35 +21,14 @@ return {
 		priority = 1000,
 	},
 
-	-- Kanagawa
+	-- Everforest
 	{
-		"rebelot/kanagawa.nvim",
+		"neanias/everforest-nvim",
 		lazy = false,
-		enabled = CofCat.colorscheme == "kanagawa",
-		build = ":KanagawaCompile",
-		opts = {
-			compile = true,
-			dimInactive = true,
-			commentStyle = { italic = false },
-			functionStyle = { italic = false },
-			keywordStyle = { italic = false },
-			typeStyle = { italic = false },
-			statementStyle = { italic = false, bold = true },
-			colors = {
-				theme = {
-					all = {
-						ui = {
-							bg_gutter = "none",
-						},
-					},
-				},
-			},
-			overrides = function()
-				return {
-					["@variable.builtin"] = { italic = false },
-				}
-			end,
-		},
+		enabled = CofCat.colorscheme == "everforest",
+		config = function()
+			require("plugins.theme.everforest")
+		end,
 		priority = 1000,
 	},
 }

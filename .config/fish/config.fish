@@ -8,8 +8,6 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
-source ~/.config/fish/themes/kanagawa.fish
-
 # aliases
 alias ls "ls -p -G"
 alias la "ls -A"
@@ -23,9 +21,6 @@ set -gx EDITOR nvim
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
-
-# NVM
-# Set nvm default
 
 set --universal nvm_default_version lts
 
