@@ -127,6 +127,12 @@ setup_tmux() {
 	if test ! "$(command -v ide)"; then
 		info "Ide command not add. Adding."
 
+
+		if [ ! -d "~/bin" ]; then
+			warning "bin 目錄不存在，建立目錄"
+			mkdir -p "~/bin"
+		fi
+	
 		ln -s "$DOTFILES/.scripts" ~/bin
 
 		chmod +x ~/bin/ide
