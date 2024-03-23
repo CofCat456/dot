@@ -203,4 +203,20 @@ return {
 		},
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
 	},
+
+	-- Outline
+	{
+		"hedyhli/outline.nvim",
+		init = function()
+			local keys = require("lazyvim.plugins.lsp.keymaps").get()
+
+			keys[#keys + 1] = {
+				"cs",
+				"<cmd>Outline<CR>",
+				desc = "Toggle Outline",
+			}
+		end,
+		config = true,
+		cmd = { "Outline", "OutlineOpen" },
+	},
 }

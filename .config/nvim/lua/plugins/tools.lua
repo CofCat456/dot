@@ -96,6 +96,7 @@ return {
 		},
 	},
 
+	-- stops inactive LSP clients
 	{
 		"zeioth/garbage-day.nvim",
 		dependencies = "neovim/nvim-lspconfig",
