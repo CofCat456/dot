@@ -8,6 +8,8 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
+source ~/.config/fish/themes/tokyonight_moon.fish
+
 # aliases
 alias ls "ls -p -G"
 alias la "ls -A"

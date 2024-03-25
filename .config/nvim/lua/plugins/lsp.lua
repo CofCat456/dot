@@ -1,4 +1,16 @@
 return {
+	-- typescripttools
+	{
+		"pmizio/typescript-tools.nvim",
+		enabled = CofCat.plugins.typescriptTools,
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+		config = function()
+			require("plugins.config.typescript-tools")
+		end,
+	},
+
 	-- glance
 	{
 		"dnlhc/glance.nvim",
@@ -42,71 +54,18 @@ return {
 			servers = {
 				cssls = {},
 				tailwindcss = {
-					root_dir = function(fname)
-						local root_pattern = require("lspconfig").util.root_pattern(
-							"tailwind.config.cjs",
-							"tailwind.config.js",
-							"postcss.config.js"
-						)
-						return root_pattern(fname)
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
-				volar = {},
-				tsserver = {
-					single_file_support = false,
-					filetypes = {
-						"javascript",
-						"javascriptreact",
-						"javascript.jsx",
-						"typescript",
-						"typescriptreact",
-						"typescript.tsx",
-						"vue",
-					},
+				volar = {
 					init_options = {
-						hostInfo = "neovim",
-						plugins = {
-							{
-								name = "@vue/typescript-plugin",
-								location = require("utils.getPath").get_npm_global_path() .. "/@vue/typescript-plugin",
-								-- location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
-								languages = {
-									"vue",
-								},
-							},
-						},
-					},
-					settings = {
-						typescript = {
-							inlayHints = {
-								includeInlayParameterNameHints = "literal",
-								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-								includeInlayFunctionParameterTypeHints = true,
-								includeInlayVariableTypeHints = false,
-								includeInlayPropertyDeclarationTypeHints = true,
-								includeInlayFunctionLikeReturnTypeHints = true,
-								includeInlayEnumMemberValueHints = true,
-							},
-						},
-						javascript = {
-							inlayHints = {
-								includeInlayParameterNameHints = "all",
-								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-								includeInlayFunctionParameterTypeHints = true,
-								includeInlayVariableTypeHints = true,
-								includeInlayPropertyDeclarationTypeHints = true,
-								includeInlayFunctionLikeReturnTypeHints = true,
-								includeInlayEnumMemberValueHints = true,
-							},
+						vue = {
+							hybridMode = true,
 						},
 					},
 				},
 				html = {},
-				emmet_ls = {
-					filetypes = {
-						"html",
-					},
-				},
 				lua_ls = {
 					-- enabled = false,
 					single_file_support = true,

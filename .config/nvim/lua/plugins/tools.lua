@@ -95,14 +95,4 @@ return {
 			{ "zM", "<cmd>lua require('ufo').closeAllFolds()<cr>", desc = "Close folds" },
 		},
 	},
-
-	-- stops inactive LSP clients
-	{
-		"zeioth/garbage-day.nvim",
-		dependencies = "neovim/nvim-lspconfig",
-		event = "VeryLazy",
-		opts = {
-			-- your options here
-		},
-	},
 }

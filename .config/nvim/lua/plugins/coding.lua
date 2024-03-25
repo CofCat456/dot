@@ -50,22 +50,12 @@ return {
 	},
 
 	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		dependencies = {
-			{
-				"L3MON4D3/LuaSnip",
-				dependencies = "rafamadriz/friendly-snippets",
-				build = "make install_jsregexp",
-				config = function()
-					require("luasnip.loaders.from_vscode").lazy_load({
-						paths = { vim.fn.stdpath("config") .. "/snippets" },
-					})
-				end,
-			},
-		},
-		opts = function(_, opts)
-			table.insert(opts.sources, { name = "emoji" })
+		"L3MON4D3/LuaSnip",
+		event = "LazyFile",
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load({
+				paths = { vim.fn.stdpath("config") .. "/snippets" },
+			})
 		end,
 	},
 

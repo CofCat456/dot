@@ -17,4 +17,9 @@ return {
 		"echasnovski/mini.indentscope",
 		enabled = false,
 	},
+
+	{
+		"nvim-treesitter-context",
+		enabled = false,
+	},
 }

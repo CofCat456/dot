@@ -14,7 +14,7 @@ local theme = {
 
 CofCat = {
 	--- @usage 'tokyonight' | 'catppuccin' | 'evetforest'
-	colorscheme = theme.everforest,
+	colorscheme = theme.tokyonight,
 	ui = {
 		transparent = false,
 		float = {
@@ -23,7 +23,7 @@ CofCat = {
 	},
 	plugins = {
 		flash = true,
-		typescriptTools = false,
+		typescriptTools = true,
 	},
 	lsp = {
 		virtual_text = true, -- show virtual text (errors, warnings, info) inline messages

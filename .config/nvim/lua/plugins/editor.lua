@@ -187,36 +187,4 @@ return {
 			require("plugins.config.colorizer")
 		end,
 	},
-
-	-- tailwind
-	{
-		"js-everts/cmp-tailwind-colors",
-		enabled = require("utils.have").have_tailwindcss(),
-		config = true,
-	},
-	{
-		"razak17/tailwind-fold.nvim",
-		enabled = require("utils.have").have_tailwindcss(),
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = {
-			min_chars = 50,
-		},
-		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
-	},
-
-	-- Outline
-	{
-		"hedyhli/outline.nvim",
-		init = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-
-			keys[#keys + 1] = {
-				"cs",
-				"<cmd>Outline<CR>",
-				desc = "Toggle Outline",
-			}
-		end,
-		config = true,
-		cmd = { "Outline", "OutlineOpen" },
-	},
 }
