@@ -8,15 +8,13 @@
 
 ## :wrench:  Features
 
-- Configured for TypeScript Development (React, Next, Vue 3, Nuxt.)
-- Cute default theme: [Catppuccin](https://github.com/catppuccin/nvim)
+- Configured for TypeScript Development (React, Next, Vue 3, Nuxt)
+- Cool default theme: [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - Lazy loaded via [lazy.nvim](https://github.com/folke/lazy.nvim)
 - Extendable LSP configuration via [mason.nvim](https://github.com/williamboman/mason.nvim)
 - Support for [TailwindCSS](https://tailwindcss.com/) with highlighted colors
-- Current code context via [nvim-navic](https://github.com/SmiteshP/nvim-navic)
-- Using lualine with the Catppuccino theme [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) 
 
-And of course usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), [bufferline](https://github.com/akinsho/bufferline.nvim), [cmp](https://github.com/hrsh7th/nvim-cmp), [treesitter](https://github.com/nvim-treesitter/nvim-treesitter), [blankline](https://github.com/lukas-reineke/indent-blankline.nvim) & more!
+And of course usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), [bufferline](https://github.com/akinsho/bufferline.nvim), [cmp](https://github.com/hrsh7th/nvim-cmp), [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) & more!
 
 ## :camera:  Screenshots
 
@@ -24,9 +22,14 @@ Dashboard
 
 ![Dashboard](./.screenshots/1-dashboard.png)
 
-Overview
+Overview (React Project)
 
-![Neovim](./.screenshots/2-main.png)
+![Neovim](./.screenshots/2-main-ts.png)
+
+
+Overview (Vue Project)
+
+![Neovim](./.screenshots/3-main-vue.png)
 
 ## Initial setup
 
