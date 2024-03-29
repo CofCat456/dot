@@ -9,112 +9,26 @@ end
 
 catppuccin.setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
-	background = { -- :h background
-		light = "latte",
-		dark = "mocha",
-	},
-	transparent_background = false, -- disables setting the background color.
-	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-	term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+	transparent_background = false,
 	dim_inactive = {
 		enabled = false, -- dims the background color of inactive window
-		shade = "dark",
-		percentage = 0.15, -- percentage of the shade to apply to the inactive window
+		shade = "light",
+		percentage = 0.9, -- percentage of the shade to apply to the inactive window
 	},
-	no_italic = false, -- Force no italic
-	no_bold = false, -- Force no bold
-	no_underline = false, -- Force no underline
-	styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-		comments = { "italic" }, -- Change the style of comments
-		conditionals = { "italic" },
-		loops = {},
-		functions = {},
-		keywords = {},
-		strings = {},
-		variables = {},
-		numbers = {},
-		booleans = {},
-		properties = {},
-		types = {},
-		operators = {},
-		-- miscs = {}, -- Uncomment to turn off hard-coded styles
-	},
-	color_overrides = {},
-	custom_highlights = {},
-	integrations = {
-		cmp = true,
-		gitsigns = true,
-		nvimtree = true,
-		treesitter = true,
-		notify = false,
-		mini = {
-			enabled = true,
-			indentscope_color = "",
-		},
-		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-	},
+	no_italic = true,
+	custom_highlights = function(colors)
+		local searchActive = { bg = colors.red, fg = "#181825" }
+		local searchInactive = { bg = colors.peach, fg = "#000000" }
+
+		return {
+			CursorLineNr = { fg = colors.flamingo },
+			Search = searchInactive,
+			IncSearch = searchActive,
+			EndOfBuffer = { fg = colors.flamingo },
+			WinSeparator = { fg = colors.surface0, bg = colors.surface0 },
+		}
+	end,
 })
 
 -- setup must be called before loading
 vim.cmd.colorscheme("catppuccin")
-
--- ╭──────────────────────────────────────────────────────────╮
--- │                         lualine                          │
--- ╰──────────────────────────────────────────────────────────╯
-
-local lualine_status_ok, lualine = pcall(require, "lualine")
-
-if not lualine_status_ok then
-	return
-end
-
-local macchiato = require("catppuccin.palettes").get_palette("macchiato")
-local catppuccin_options = require("catppuccin").options
-local transparent_bg = catppuccin_options.transparent_background and "NONE" or macchiato.mantle
-
-local custom_catppuccin_theme = {
-	normal = {
-		a = { bg = macchiato.lavender, fg = macchiato.mantle, gui = "bold" },
-		b = { bg = macchiato.mauve, fg = macchiato.mantle },
-		c = { bg = transparent_bg, fg = macchiato.text },
-		y = { bg = macchiato.red, fg = macchiato.mantle, gui = "bold" },
-		z = { bg = macchiato.pink, fg = macchiato.mantle },
-	},
-
-	insert = {
-		a = { bg = macchiato.green, fg = macchiato.base, gui = "bold" },
-		b = { bg = macchiato.surface1, fg = macchiato.teal },
-	},
-
-	terminal = {
-		a = { bg = macchiato.green, fg = macchiato.base, gui = "bold" },
-		b = { bg = macchiato.surface1, fg = macchiato.teal },
-	},
-
-	command = {
-		a = { bg = macchiato.peach, fg = macchiato.base, gui = "bold" },
-		b = { bg = macchiato.surface1, fg = macchiato.peach },
-	},
-
-	visual = {
-		a = { bg = macchiato.mauve, fg = macchiato.base, gui = "bold" },
-		b = { bg = macchiato.surface1, fg = macchiato.mauve },
-	},
-
-	replace = {
-		a = { bg = macchiato.red, fg = macchiato.base, gui = "bold" },
-		b = { bg = macchiato.surface1, fg = macchiato.red },
-	},
-
-	inactive = {
-		a = { bg = transparent_bg, fg = macchiato.blue },
-		b = { bg = transparent_bg, fg = macchiato.surface1, gui = "bold" },
-		c = { bg = transparent_bg, fg = macchiato.overlay0 },
-	},
-}
-
-lualine.setup({
-	options = {
-		theme = custom_catppuccin_theme,
-	},
-})

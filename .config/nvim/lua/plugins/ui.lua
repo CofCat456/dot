@@ -78,37 +78,24 @@ return {
 		},
 	},
 
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		opts = {
+			options = {
+				section_separators = { left = "", right = "" },
+			},
+		},
+	},
+
 	-- floating winbar
 	{
 		"b0o/incline.nvim",
-		event = "BufReadPre",
-		config = function()
-			local tokyonight_status_ok, tokyonight = pcall(require, "tokyonight.colors")
-			local incline = require("incline")
-
-			if not tokyonight_status_ok then
-				incline.setup()
-				return
-			end
-
-			local colors = tokyonight.setup()
-			require("incline").setup({
-				highlight = {
-					groups = {
-						InclineNormal = { guibg = "#FC56B1", guifg = colors.black },
-						InclineNormalNC = { guifg = "#FC56B1", guibg = colors.black },
-					},
-				},
-				window = { margin = { vertical = 0, horizontal = 1 } },
-				render = function(props)
-					local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-					local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-					return { { icon, guifg = color }, { " " }, { filename } }
-				end,
-			})
-		end,
+		event = "VeryLazy",
+		config = true,
 	},
 
+	-- dashboard
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
@@ -124,49 +111,5 @@ return {
 			logo = string.rep("\n", 8) .. logo .. "\n\n"
 			opts.config.header = vim.split(logo, "\n")
 		end,
-	},
-
-	-- ui
-	{
-		"hrsh7th/nvim-cmp",
-		opts = function(_, opts)
-			local cmp = require("cmp")
-			opts.window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
-			}
-		end,
-	},
-	{
-		"mason.nvim",
-		opts = {
-			ui = {
-				border = CofCat.ui.float,
-			},
-		},
-	},
-	{
-		"folke/noice.nvim",
-		opts = {
-			presets = {
-				lsp_doc_border = true,
-			},
-		},
-	},
-	{
-		"stevearc/dressing.nvim",
-		opts = {
-			input = {
-				border = CofCat.ui.float,
-			},
-			select = {
-				nui = {
-					border = CofCat.ui.float,
-				},
-				builtin = {
-					border = CofCat.ui.float,
-				},
-			},
-		},
 	},
 }

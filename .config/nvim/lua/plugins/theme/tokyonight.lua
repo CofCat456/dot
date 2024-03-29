@@ -6,14 +6,16 @@ end
 tokyonight.setup({
 	style = "moon",
 	transparent = CofCat.ui.transparent,
-	-- styles = {
-	--   sidebars = "transparent",
-	--   floats = "transparent",
-	-- },
+	styles = {
+		comments = { italic = false },
+		keywords = { italic = false },
+		functions = {},
+		variables = {},
+	},
 	sidebars = {
 		"qf",
 		"vista_kind",
-		"terminal",
+		-- "terminal",
 		"spectre_panel",
 		"startuptime",
 		"Outline",

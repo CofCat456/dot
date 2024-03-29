@@ -1,4 +1,16 @@
 return {
+	-- typescripttools
+	{
+		"pmizio/typescript-tools.nvim",
+		enabled = CofCat.plugins.typescriptTools,
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+		config = function()
+			require("plugins.config.typescript-tools")
+		end,
+	},
+
 	-- glance
 	{
 		"dnlhc/glance.nvim",
@@ -42,30 +54,17 @@ return {
 			servers = {
 				cssls = {},
 				tailwindcss = {
-					root_dir = function(fname)
-						local root_pattern = require("lspconfig").util.root_pattern(
-							"tailwind.config.cjs",
-							"tailwind.config.js",
-							"postcss.config.js"
-						)
-						return root_pattern(fname)
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
-				-- volar = {
-				-- 	root_dir = function(...)
-				-- 		return require("lspconfig.util").root_pattern(".git")(...)
-				-- 	end,
-				-- 	settings = {
-				-- 		vue = {
-				-- 			complete = {
-				-- 				casing = {
-				-- 					props = "autoKebab",
-				-- 					tags = "autoPascal",
-				-- 				},
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				volar = {
+					init_options = {
+						vue = {
+							hybridMode = true,
+						},
+					},
+				},
 				tsserver = {
 					single_file_support = false,
 					filetypes = {
@@ -79,11 +78,11 @@ return {
 					},
 					init_options = {
 						hostInfo = "neovim",
+						locale = "zh-tw",
 						plugins = {
 							{
 								name = "@vue/typescript-plugin",
 								location = require("utils.getPath").get_npm_global_path() .. "/@vue/typescript-plugin",
-								-- location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
 								languages = {
 									"vue",
 								},
@@ -93,7 +92,6 @@ return {
 					settings = {
 						typescript = {
 							inlayHints = {
-								importModuleSpecifierPreference = "non-relative",
 								includeInlayParameterNameHints = "literal",
 								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
 								includeInlayFunctionParameterTypeHints = true,
@@ -117,11 +115,6 @@ return {
 					},
 				},
 				html = {},
-				emmet_ls = {
-					filetypes = {
-						"html",
-					},
-				},
 				lua_ls = {
 					-- enabled = false,
 					single_file_support = true,

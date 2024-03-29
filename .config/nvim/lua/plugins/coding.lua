@@ -16,13 +16,6 @@ return {
 		},
 	},
 
-	-- Incremental rename
-	{
-		"smjonas/inc-rename.nvim",
-		cmd = "IncRename",
-		config = true,
-	},
-
 	-- Refactoring tool
 	{
 		"ThePrimeagen/refactoring.nvim",
@@ -57,25 +50,12 @@ return {
 	},
 
 	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		dependencies = {
-			{
-				"L3MON4D3/LuaSnip",
-				dependencies = "rafamadriz/friendly-snippets",
-				build = "make install_jsregexp",
-				config = function()
-					require("luasnip.loaders.from_vscode").lazy_load({
-						paths = { vim.fn.stdpath("config") .. "/snippets" },
-					})
-				end,
-			},
-			{
-				"hrsh7th/cmp-emoji",
-			},
-		},
-		opts = function(_, opts)
-			table.insert(opts.sources, { name = "emoji" })
+		"L3MON4D3/LuaSnip",
+		event = "LazyFile",
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load({
+				paths = { vim.fn.stdpath("config") .. "/snippets" },
+			})
 		end,
 	},
 
@@ -90,15 +70,6 @@ return {
 				mode = { "n", "x" },
 				desc = "Structural Replace",
 			},
-		},
-	},
-
-	{
-		"simrat39/symbols-outline.nvim",
-		keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-		cmd = "SymbolsOutline",
-		opts = {
-			position = "right",
 		},
 	},
 }

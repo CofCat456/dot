@@ -8,6 +8,9 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
+				"tsx",
+				"typescript",
+				"javascript",
 				"astro",
 				"cmake",
 				"cpp",
@@ -24,6 +27,7 @@ return {
 				"scss",
 				"sql",
 				"svelte",
+				"lua",
 			},
 
 			-- matchup = {
