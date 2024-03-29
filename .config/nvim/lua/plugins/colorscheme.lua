@@ -10,14 +10,14 @@ return {
 		priority = 1000,
 	},
 
-	-- Catppuccin
+	-- Vitesse
 	{
-		"catppuccin/nvim",
-		lazy = false,
-		enabled = CofCat.colorscheme == "catppuccin",
-		config = function()
-			require("plugins.theme.catppuccin")
-		end,
-		priority = 1000,
+		"2nthony/vitesse.nvim",
+		dependencies = {
+			"tjdevries/colorbuddy.nvim",
+		},
+		opts = {
+			dim_nc = true,
+		},
 	},
 }

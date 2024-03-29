@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
+
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
