@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 
-vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
@@ -37,6 +36,8 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+vim.o.termguicolors = true
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
