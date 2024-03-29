@@ -8,11 +8,11 @@
 
 local theme = {
 	tokyonight = "tokyonight",
-	catppuccin = "catppuccin",
+	vitesse = "vitesse",
 }
 
 CofCat = {
-	--- @usage 'tokyonight' | 'catppuccin'
+	--- @usage 'tokyonight' | 'vitesse'
 	colorscheme = theme.tokyonight,
 	ui = {
 		transparent = false,
