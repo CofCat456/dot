@@ -120,6 +120,7 @@
   "vue.inlayHints.optionsWrapper": true,
   "vue.splitEditors.icon": true,
   "vue.autoInsert.dotValue": true,
+  "vue.server.hybridMode": true,
 
   // Vim
   "vim.foldfix": true,
