@@ -24,9 +24,6 @@ set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
 
-# NVM
-# Set nvm default
-
 set --universal nvm_default_version lts
 
 switch (uname)
