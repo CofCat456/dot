@@ -77,4 +77,22 @@ return {
 		cmd = { "TSC" },
 		config = true,
 	},
+
+	-- nvim-ufo
+	{
+		"kevinhwang91/nvim-ufo",
+		event = "VeryLazy",
+		dependencies = {
+			"kevinhwang91/promise-async",
+		},
+		opts = {
+			provider_selector = function(_, _, _)
+				return { "treesitter", "indent" }
+			end,
+		},
+		keys = {
+			{ "zR", "<cmd>lua require('ufo').openAllFolds()<cr>", desc = "Open folds" },
+			{ "zM", "<cmd>lua require('ufo').closeAllFolds()<cr>", desc = "Close folds" },
+		},
+	},
 }
