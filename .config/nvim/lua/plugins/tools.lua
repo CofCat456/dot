@@ -45,7 +45,6 @@ return {
 				desc = "Switch",
 			},
 		},
-
 		config = function()
 			vim.g.switch_mapping = ""
 		end,
@@ -93,6 +92,33 @@ return {
 		keys = {
 			{ "zR", "<cmd>lua require('ufo').openAllFolds()<cr>", desc = "Open folds" },
 			{ "zM", "<cmd>lua require('ufo').closeAllFolds()<cr>", desc = "Close folds" },
+		},
+	},
+
+	-- wtf
+	{
+		"piersolenski/wtf.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		config = true,
+		keys = {
+			-- {
+			-- 	"gw",
+			-- 	mode = { "n", "x" },
+			-- 	function()
+			-- 		require("wtf").ai()
+			-- 	end,
+			-- 	desc = "Debug diagnostic with AI",
+			-- },
+			{
+				mode = { "n" },
+				"gW",
+				function()
+					require("wtf").search()
+				end,
+				desc = "Search diagnostic with Google",
+			},
 		},
 	},
 }
