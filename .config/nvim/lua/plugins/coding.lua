@@ -80,15 +80,35 @@ return {
 	},
 
 	{
-		"cshuaimin/ssr.nvim",
+		"smoka7/multicursors.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"smoka7/hydra.nvim",
+		},
+		opts = {
+			hint_config = {
+				border = CofCat.ui.float.border or "rounded",
+				position = "bottom",
+				show_name = false,
+			},
+		},
 		keys = {
 			{
-				"<leader>sR",
-				function()
-					require("ssr").open()
-				end,
-				mode = { "n", "x" },
-				desc = "Structural Replace",
+				"<LEADER>m",
+				"<CMD>MCstart<CR>",
+				desc = "multicursor",
+			},
+			{
+				"<LEADER>m",
+				"<CMD>MCvisual<CR>",
+				mode = "v",
+				desc = "multicursor",
+			},
+			{
+				"<C-Down>",
+				"<CMD>MCunderCursor<CR>",
+				desc = "multicursor down",
 			},
 		},
 	},

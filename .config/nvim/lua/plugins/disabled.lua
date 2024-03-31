@@ -5,11 +5,6 @@ return {
 	},
 
 	{
-		"nvim-pack/nvim-spectre",
-		enabled = false,
-	},
-
-	{
 		"lukas-reineke/indent-blankline.nvim",
 		enabled = false,
 	},
