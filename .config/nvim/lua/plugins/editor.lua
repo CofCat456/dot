@@ -203,4 +203,15 @@ return {
 		},
 		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
 	},
+	{
+		"MaximilianLloyd/tw-values.nvim",
+		enabled = require("utils.have").have_tailwindcss(),
+		keys = {
+			{ "<Leader>cv", "<CMD>TWValues<CR>", desc = "Tailwind CSS values" },
+		},
+		opts = {
+			border = CofCat.ui.float.border or "rounded", -- Valid window border style,
+			show_unknown_classes = true, -- Shows the unknown classes popup
+		},
+	},
 }
