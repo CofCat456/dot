@@ -51,22 +51,17 @@ return {
 						return root_pattern(fname)
 					end,
 				},
-				-- volar = {
-				-- 	root_dir = function(...)
-				-- 		return require("lspconfig.util").root_pattern(".git")(...)
-				-- 	end,
-				-- 	settings = {
-				-- 		vue = {
-				-- 			complete = {
-				-- 				casing = {
-				-- 					props = "autoKebab",
-				-- 					tags = "autoPascal",
-				-- 				},
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				volar = {
+					init_options = {
+						vue = {
+							hybridMode = true,
+						},
+					},
+				},
 				tsserver = {
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
+					end,
 					single_file_support = false,
 					filetypes = {
 						"javascript",
@@ -79,11 +74,11 @@ return {
 					},
 					init_options = {
 						hostInfo = "neovim",
+						locale = "zh-tw",
 						plugins = {
 							{
 								name = "@vue/typescript-plugin",
 								location = require("utils.getPath").get_npm_global_path() .. "/@vue/typescript-plugin",
-								-- location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
 								languages = {
 									"vue",
 								},
@@ -93,7 +88,6 @@ return {
 					settings = {
 						typescript = {
 							inlayHints = {
-								importModuleSpecifierPreference = "non-relative",
 								includeInlayParameterNameHints = "literal",
 								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
 								includeInlayFunctionParameterTypeHints = true,
@@ -224,15 +218,6 @@ return {
 					require_cwd = true,
 				},
 			},
-		},
-	},
-
-	{
-		"zeioth/garbage-day.nvim",
-		dependencies = "neovim/nvim-lspconfig",
-		event = "VeryLazy",
-		opts = {
-			-- your options here
 		},
 	},
 }

@@ -22,7 +22,6 @@ CofCat = {
 	},
 	plugins = {
 		flash = true,
-		typescriptTools = false,
 	},
 	lsp = {
 		virtual_text = true, -- show virtual text (errors, warnings, info) inline messages
