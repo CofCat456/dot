@@ -51,6 +51,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
+		version = "0.*",
 		event = "InsertEnter",
 		dependencies = {
 			{
@@ -63,13 +64,7 @@ return {
 					})
 				end,
 			},
-			{
-				"hrsh7th/cmp-emoji",
-			},
 		},
-		opts = function(_, opts)
-			table.insert(opts.sources, { name = "emoji" })
-		end,
 	},
 
 	{
@@ -103,15 +98,6 @@ return {
 				"<CMD>MCunderCursor<CR>",
 				desc = "multicursor down",
 			},
-		},
-	},
-
-	{
-		"simrat39/symbols-outline.nvim",
-		keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-		cmd = "SymbolsOutline",
-		opts = {
-			position = "right",
 		},
 	},
 }
