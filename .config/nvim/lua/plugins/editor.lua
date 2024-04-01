@@ -207,7 +207,7 @@ return {
 		"MaximilianLloyd/tw-values.nvim",
 		enabled = require("utils.have").have_tailwindcss(),
 		keys = {
-			{ "<Leader>cv", "<CMD>TWValues<CR>", desc = "Tailwind CSS values" },
+			{ "<Leader>tv", "<CMD>TWValues<CR>", desc = "Tailwind CSS values" },
 		},
 		opts = {
 			border = CofCat.ui.float.border or "rounded", -- Valid window border style,
