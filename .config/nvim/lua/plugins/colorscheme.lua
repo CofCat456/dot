@@ -24,4 +24,23 @@ return {
 			diagnostic_virtual_text_background = true,
 		},
 	},
+
+	-- Everforest
+	{
+		"sainnhe/everforest",
+		lazy = false,
+		enabled = CofCat.colorscheme == "everforest",
+		config = function()
+			vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+				pattern = { "everforest" },
+				callback = function(_ev)
+					vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#9ccfd8" })
+				end,
+			})
+			vim.g.everforest_background = "soft"
+			vim.g.everforest_better_performance = 1
+			vim.g.everforest_transparent_background = CofCat.ui.transparent and 1 or 0
+		end,
+		priority = 1000,
+	},
 }
