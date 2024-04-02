@@ -48,15 +48,13 @@ return {
 					end)
 				end,
 			})
-
-			opts.presets.lsp_doc_border = true
 		end,
 	},
 
 	{
 		"rcarriga/nvim-notify",
 		opts = {
-			timeout = 5000,
+			timeout = 1000,
 		},
 	},
 
@@ -126,7 +124,10 @@ return {
 		end,
 	},
 
-	-- ui
+	-- ╭──────────────────────────────────────────────────────────╮
+	-- │ Setup UI Border                                          │
+	-- ╰──────────────────────────────────────────────────────────╯
+	--
 	{
 		"hrsh7th/nvim-cmp",
 		opts = function(_, opts)
@@ -166,6 +167,14 @@ return {
 				builtin = {
 					border = CofCat.ui.float,
 				},
+			},
+		},
+	},
+	{
+		"gitsigns.nvim",
+		opts = {
+			preview_config = {
+				border = CofCat.ui.float,
 			},
 		},
 	},
