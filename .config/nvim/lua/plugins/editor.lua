@@ -190,11 +190,6 @@ return {
 
 	-- tailwind
 	{
-		"js-everts/cmp-tailwind-colors",
-		enabled = require("utils.have").have_tailwindcss(),
-		config = true,
-	},
-	{
 		"razak17/tailwind-fold.nvim",
 		enabled = require("utils.have").have_tailwindcss(),
 		dependencies = { "nvim-treesitter/nvim-treesitter" },

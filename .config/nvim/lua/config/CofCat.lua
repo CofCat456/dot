@@ -8,13 +8,13 @@
 
 local theme = {
 	tokyonight = "tokyonight",
-	vitesse = "vitesse",
 	everforest = "everforest",
+	oxocarbon = "oxocarbon",
 }
 
 CofCat = {
-	--- @usage 'tokyonight' | 'vitesse' | 'everforest'
-	colorscheme = theme.everforest,
+	--- @usage 'tokyonight' | 'everforest' | 'oxocarbon'
+	colorscheme = theme.oxocarbon,
 	ui = {
 		transparent = false,
 		float = {
