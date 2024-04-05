@@ -46,7 +46,7 @@ M.have_vue = function()
 end
 
 M.have_tailwindcss = function()
-	return is_npm_package_installed("tailwindcss")
+	return is_npm_package_installed("tailwindcss") or is_npm_package_installed("@nuxtjs/tailwindcss")
 end
 
 return M
