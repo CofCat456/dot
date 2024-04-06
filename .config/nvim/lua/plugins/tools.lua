@@ -35,6 +35,7 @@ return {
 	-- switch boolean
 	{
 		"AndrewRadev/switch.vim",
+		enabled = CofCat.plugins.switch,
 		vscode = true,
 		keys = {
 			{
@@ -113,7 +114,7 @@ return {
 			-- },
 			{
 				mode = { "n" },
-				"gW",
+				"gw",
 				function()
 					require("wtf").search()
 				end,

@@ -14,15 +14,16 @@ local theme = {
 
 CofCat = {
 	--- @usage 'tokyonight' | 'everforest' | 'oxocarbon'
-	colorscheme = theme.oxocarbon,
+	colorscheme = theme.everforest,
 	ui = {
-		transparent = false,
+		transparent = true,
 		float = {
 			border = "rounded",
 		},
 	},
 	plugins = {
 		flash = true,
+		switch = false,
 	},
 	lsp = {
 		virtual_text = true, -- show virtual text (errors, warnings, info) inline messages
