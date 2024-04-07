@@ -1,15 +1,15 @@
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		enabled = false,
+		enabled = CofCat.plugins.tree,
 	},
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		enabled = false,
+		enabled = CofCat.plugins.blankline,
 	},
 	{
 		"echasnovski/mini.indentscope",
-		enabled = false,
+		enabled = CofCat.plugins.indentscope,
 	},
 }

@@ -22,6 +22,9 @@ CofCat = {
 		},
 	},
 	plugins = {
+		tree = true,
+		blankline = false,
+		indentscope = false,
 		flash = true,
 		switch = false,
 	},
