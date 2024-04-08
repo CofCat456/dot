@@ -54,6 +54,16 @@
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
   {
+		"key": "cmd+]",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
     "key": "alt+cmd+o",
     "command": "projectManager.listProjectsNewWindow"
   }

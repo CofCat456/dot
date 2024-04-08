@@ -3,8 +3,7 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "Dank Mono, monospace",
   "editor.fontWeight": 400,
-  "editor.fontSize": 14,
-  "editor.fontLigatures": "'ss03', 'ss06', 'ss08', 'calt'",
+  "editor.fontSize": 14.5,
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "boundary",
@@ -20,8 +19,8 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
 
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
@@ -93,34 +92,19 @@
   "extensions.ignoreRecommendations": false,
 
   // ==========  Typescript ==========
-  "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "warning",
-    "error"
-  ],
-  "errorLens.excludeBySource": [
-    "cSpell",
-    "Grammarly",
-    "eslint"
-  ],
+  "errorLens.enabledDiagnosticLevels": ["warning", "error"],
+  "errorLens.excludeBySource": ["cSpell", "Grammarly", "eslint"],
   // Project Manger
   "projectManager.sortList": "Recent",
   // Volar
-  "vue.server.additionalExtensions": [
-    "svg",
-    "vue"
-  ],
-  "vue.inlayHints.missingProps": true,
-  "vue.inlayHints.optionsWrapper": true,
-  "vue.splitEditors.icon": true,
-  "vue.autoInsert.dotValue": true,
-  "vue.updateImportsOnFileMove.enabled": true,
   "vue.server.hybridMode": true,
+  "vue.server.additionalExtensions": ["svg", "vue"],
+  "vue.autoInsert.dotValue": true,
 
   // Vim
   "vim.foldfix": true,
@@ -133,132 +117,60 @@
   "vim.highlightedyank.enable": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "commands": [
-        "workbench.view.explorer"
-      ]
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
     },
     {
-      "before": [
-        "<tab>"
-      ],
-      "commands": [
-        "workbench.action.nextEditor"
-      ]
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
     },
     {
-      "before": [
-        "<S-tab>"
-      ],
-      "commands": [
-        "workbench.action.previousEditor"
-      ]
+      "before": ["<S-tab>"],
+      "commands": ["workbench.action.previousEditor"]
     },
     {
-      "before": [
-        "K"
-      ],
-      "commands": [
-        "editor.action.showHover"
-      ]
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
     },
     {
-      "before": [
-        "c",
-        "r"
-      ],
-      "commands": [
-        "editor.action.rename"
-      ]
+      "before": ["c", "r"],
+      "commands": ["editor.action.rename"]
     },
     {
-      "before": [
-        "g",
-        "r"
-      ],
-      "commands": [
-        "editor.action.goToReferences"
-      ]
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
     },
     {
-      "before": [
-        "<leader>",
-        "c",
-        "a"
-      ],
-      "commands": [
-        "editor.action.quickFix"
-      ]
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
     },
     {
-      "before": [
-        "s",
-        "s"
-      ],
-      "commands": [
-        "workbench.action.splitEditorDown"
-      ]
+      "before": ["s", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
     },
     {
-      "before": [
-        "s",
-        "v"
-      ],
-      "commands": [
-        "workbench.action.splitEditor"
-      ]
+      "before": ["s", "v"],
+      "commands": ["workbench.action.splitEditor"]
     },
     {
-      "before": [
-        "s",
-        "h"
-      ],
-      "after": [
-        "<C-w>",
-        "h"
-      ]
+      "before": ["s", "h"],
+      "after": ["<C-w>", "h"]
     },
     {
-      "before": [
-        "s",
-        "j"
-      ],
-      "after": [
-        "<C-w>",
-        "j"
-      ]
+      "before": ["s", "j"],
+      "after": ["<C-w>", "j"]
     },
     {
-      "before": [
-        "s",
-        "k"
-      ],
-      "after": [
-        "<C-w>",
-        "k"
-      ]
+      "before": ["s", "k"],
+      "after": ["<C-w>", "k"]
     },
     {
-      "before": [
-        "s",
-        "l"
-      ],
-      "after": [
-        "<C-w>",
-        "l"
-      ]
+      "before": ["s", "l"],
+      "after": ["<C-w>", "l"]
     },
     {
-      "before": [
-        "<C-j>"
-      ],
-      "commands": [
-        "editor.action.marker.prev",
-        "closeMarkersNavigation"
-      ],
+      "before": ["<C-j>"],
+      "commands": ["editor.action.marker.next", "closeMarkersNavigation"],
       "silent": true
     }
   ],
@@ -272,13 +184,7 @@
   },
   // TODO Tree
   "todo-tree.general.statusBar": "tags",
-  "todo-tree.general.tags": [
-    "TODO",
-    "FIXME",
-    "TEST",
-    "BUG",
-    "NOTE"
-  ],
+  "todo-tree.general.tags": ["TODO", "FIXME", "TEST", "BUG", "NOTE"],
   "todo-tree.highlights.customHighlight": {
     "TODO": {
       "background": "#00c9ff",
@@ -370,19 +276,7 @@
       "severity": "off"
     }
   ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "html", "markdown", "json", "jsonc", "yaml", "toml"],
   // I only use Prettier for manually formatting
   "editor.formatOnSave": false,
   // "prettier.enable": false,
@@ -530,5 +424,5 @@
     "svelte.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, houdini.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, mdsvex.config.js, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vite.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "vite.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "vue.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
-  }
+  },
 }
