@@ -20,6 +20,7 @@ return {
 				pattern = { "everforest" },
 				callback = function(_ev)
 					vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#9ccfd8" })
+					vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#9ccfd8" })
 				end,
 			})
 			vim.g.everforest_current_word = "underline"
