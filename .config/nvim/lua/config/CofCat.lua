@@ -22,11 +22,14 @@ CofCat = {
 		},
 	},
 	plugins = {
-		tree = true,
+		tree = false,
 		blankline = false,
 		indentscope = false,
 		flash = true,
 		switch = false,
+		treesitter = {
+			context = false,
+		},
 	},
 	lsp = {
 		virtual_text = true, -- show virtual text (errors, warnings, info) inline messages

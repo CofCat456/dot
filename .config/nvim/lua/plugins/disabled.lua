@@ -5,6 +5,11 @@ return {
 	},
 
 	{
+		"nvim-treesitter-context",
+		enabled = CofCat.plugins.treesitter.context,
+	},
+
+	{
 		"lukas-reineke/indent-blankline.nvim",
 		enabled = CofCat.plugins.blankline,
 	},
