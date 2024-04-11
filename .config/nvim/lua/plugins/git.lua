@@ -7,11 +7,11 @@ return {
 			require("plugins.git.conflict")
 		end,
 		keys = {
-			{ "<Leader>gcb", "<cmd>GitConflictChooseBoth<CR>", desc = "choose both" },
-			{ "<Leader>gcn", "<cmd>GitConflictNextConflict<CR>", desc = "move to next conflict" },
-			{ "<Leader>gcc", "<cmd>GitConflictChooseOurs<CR>", desc = "choose current" },
-			{ "<Leader>gcp", "<cmd>GitConflictPrevConflict<CR>", desc = "move to prev conflict" },
-			{ "<Leader>gci", "<cmd>GitConflictChooseTheirs<CR>", desc = "choose incoming" },
+			{ "<Leader>gCb", "<cmd>GitConflictChooseBoth<CR>", desc = "choose both" },
+			{ "<Leader>gCn", "<cmd>GitConflictNextConflict<CR>", desc = "move to next conflict" },
+			{ "<Leader>gCc", "<cmd>GitConflictChooseOurs<CR>", desc = "choose current" },
+			{ "<Leader>gCp", "<cmd>GitConflictPrevConflict<CR>", desc = "move to prev conflict" },
+			{ "<Leader>gCi", "<cmd>GitConflictChooseTheirs<CR>", desc = "choose incoming" },
 		},
 	},
 

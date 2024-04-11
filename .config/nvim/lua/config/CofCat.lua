@@ -16,7 +16,7 @@ CofCat = {
 	--- @usage 'tokyonight' | 'everforest' | 'oxocarbon'
 	colorscheme = theme.everforest,
 	ui = {
-		transparent = true,
+		transparent = false,
 		float = {
 			border = "rounded",
 		},
