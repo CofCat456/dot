@@ -64,7 +64,7 @@
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
   {
-    "key": "alt+cmd+o",
+    "key": "alt+cmd+p",
     "command": "projectManager.listProjectsNewWindow"
   }
 ]

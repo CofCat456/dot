@@ -17,7 +17,7 @@
   },
   "vue-script-setup": {
     "scope": "vue",
-    "prefix": "sc",
+    "prefix": "<sc",
     "body": [
       "<script setup lang=\"ts\">",
       "const props = defineProps<{",

@@ -2,25 +2,24 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "Dank Mono, monospace",
-  "editor.fontWeight": 400,
   "editor.fontSize": 14.5,
   "editor.guides.bracketPairs": "active",
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "boundary",
   "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Vitesse Dark",
   "workbench.editor.tabActionLocation": "left",
   "workbench.fontAliasing": "antialiased",
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredDarkColorTheme": "Vitesse Dark",
   "workbench.preferredLightColorTheme": "Vitesse Light",
   "workbench.productIconTheme": "icons-carbon",
+  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  "workbench.editor.enablePreview": true,
-  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.activityBar.location": "top",
 
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
@@ -89,10 +88,11 @@
   "window.title": "${rootName}", // this make tabs more readable
   "window.titleBarStyle": "custom",
   "extensions.autoUpdate": "onlyEnabledExtensions",
-  "extensions.ignoreRecommendations": false,
 
-  // ==========  Typescript ==========
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  // ========== Typescript configs ==========
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferGoToSourceDefinition": true,
+  "typescript.suggest.completeFunctionCalls": true,
 
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
