@@ -65,6 +65,6 @@
   },
   {
     "key": "alt+cmd+p",
-    "command": "projectManager.listProjectsNewWindow"
+    "command": "workbench.action.openRecent"
   }
 ]

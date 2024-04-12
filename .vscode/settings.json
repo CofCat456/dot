@@ -1,8 +1,9 @@
 {
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "Dank Mono, monospace",
-  "editor.fontSize": 14.5,
+  "editor.fontFamily": "Input Mono, monospace",
+  "editor.fontSize": 13.5,
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
   "editor.guides.bracketPairs": "active",
   "editor.lineNumbers": "interval",
   "editor.renderWhitespace": "boundary",
@@ -20,6 +21,9 @@
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
   "workbench.activityBar.location": "top",
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
 
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
@@ -47,8 +51,6 @@
   "scm.diffDecorationsGutterWidth": 2,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.fontFamily": "Dank Mono",
-  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": true,
@@ -99,8 +101,7 @@
   "emmet.triggerExpansionOnTab": false,
   "errorLens.enabledDiagnosticLevels": ["warning", "error"],
   "errorLens.excludeBySource": ["cSpell", "Grammarly", "eslint"],
-  // Project Manger
-  "projectManager.sortList": "Recent",
+
   // Volar
   "vue.server.hybridMode": true,
   "vue.server.additionalExtensions": ["svg", "vue"],
