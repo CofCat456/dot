@@ -92,8 +92,6 @@
   "extensions.autoUpdate": "onlyEnabledExtensions",
 
   // ========== Typescript configs ==========
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.preferGoToSourceDefinition": true,
   "typescript.suggest.completeFunctionCalls": true,
 
   // ========== Extension configs ==========
@@ -134,7 +132,7 @@
       "commands": ["editor.action.showHover"]
     },
     {
-      "before": ["c", "r"],
+      "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"]
     },
     {
