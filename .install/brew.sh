@@ -14,7 +14,7 @@ brew install eza
 brew install fish
 brew install fzf
 brew install ghq
-brew install git-delta
+# brew install git-delta
 
 # nvim lazyVim
 brew install lazygit
@@ -32,7 +32,7 @@ brew tap homebrew/cask-fonts
 
 # choose your prefer font
 brew install font-hack-nerd-font
-# brew install font-plemol-jp
+brew install font-hack-nerd-font
 brew install font-symbols-only-nerd-font
 
 # python
@@ -48,8 +48,9 @@ brew install gnu-sed
 brew install --cask aldente
 brew install --cask rectangle
 brew install --cask visual-studio-code
-brew install --cask google-chrome
+brew install --cask arc
 brew install --cask postman
+brew install --cask raycast
 
 # brew install bat
 # brew install hub
