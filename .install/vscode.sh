@@ -6,6 +6,8 @@ extensions=(
 	"antfu.open-in-github-button"
 	"Lokalise.i18n-ally"
 	"antfu.goto-alias"
+	"antfu.smart-clicks"
+	"antfu.goto-alias"
 
 	# my favorite :>
 	"vscodevim.vim"
@@ -13,7 +15,6 @@ extensions=(
 	# themes & icons
 	"antfu.icons-carbon"
 	"antfu.theme-vitesse"
-	"sainnhe.gruvbox-material"
 	"catppuccin.catppuccin-vsc-icons"
 
 	# life savers!
@@ -32,19 +33,16 @@ extensions=(
 
 	# up to you
 	"eamodio.gitlens"
-	"alefragnani.project-manager"
 	"ms-ceintl.vscode-language-pack-zh-hant"
 	"esbenp.prettier-vscode"
-	"meganrogge.template-string-converter"
 	"EditorConfig.EditorConfig"
 	"github.vscode-github-actions"
 	"GitHub.vscode-pull-request-github"
-	"johnsoncodehk.vscode-tsconfig-helper"
 	"naumovs.color-highlight"
 	"WakaTime.vscode-wakatime"
 	"znck.grammarly"
 	"Gruntfuggly.todo-tree"
-	"neptunedesign.vs-sequential-number"
+	"vitest.explorer"
 )
 
 for extension in "${extensions[@]}"; do
