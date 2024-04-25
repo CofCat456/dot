@@ -10,14 +10,6 @@ set -g theme_hostname always
 
 source ~/.config/fish/themes/tokyonight_moon.fish
 
-# aliases
-alias ls "ls -p -G"
-alias la "ls -A"
-alias ll "ls -l"
-alias lla "ll -A"
-alias g git
-command -qv nvim && alias vim nvim
-
 set -gx EDITOR nvim
 
 set -gx PATH bin $PATH
@@ -28,6 +20,8 @@ set -gx PATH ~/.local/bin $PATH
 # Set nvm default
 
 set --universal nvm_default_version lts
+
+source (dirname (status --current-filename))/config-alias.fish
 
 switch (uname)
     case Darwin

@@ -14,7 +14,7 @@ brew install eza
 brew install fish
 brew install fzf
 brew install ghq
-# brew install git-delta
+brew install hub
 
 # nvim lazyVim
 brew install lazygit
