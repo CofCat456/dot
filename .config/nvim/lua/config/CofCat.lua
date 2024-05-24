@@ -14,7 +14,7 @@ local theme = {
 
 CofCat = {
 	--- @usage 'tokyonight' | 'everforest' | 'oxocarbon'
-	colorscheme = theme.everforest,
+	colorscheme = theme.tokyonight,
 	ui = {
 		transparent = false,
 		float = {

@@ -19,6 +19,9 @@ npm i -g degit
 echo "Installing a rimraf"
 npm i -g rimraf
 
+echo "Installing a esno"
+npm i -g esno
+
 # for vue project
 echo "Installing a volar lsp server"
 npm i -g @vue/typescript-plugin

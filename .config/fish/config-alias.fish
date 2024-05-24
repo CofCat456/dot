@@ -27,7 +27,11 @@ alias lintf "nr lint --fix"
 alias release "nr release"
 alias re "nr release"
 
+# -------------------------------- #
+# Git
+# -------------------------------- #
 # Use github/hub
+
 alias git hub
 
 alias gs 'git status'
@@ -69,3 +73,10 @@ alias gfrb 'git fetch origin && git rebase origin/master'
 
 alias gxn 'git clean -dn'
 alias gx 'git clean -df'
+
+# -------------------------------- #
+# Docker
+# -------------------------------- #
+
+alias dc 'docker compose'
+alias dcu 'docker compose up'

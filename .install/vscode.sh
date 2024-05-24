@@ -20,9 +20,7 @@ extensions=(
 	# life savers!
 	"dbaeumer.vscode-eslint"
 	"Vue.volar"
-	"vue.vscode-typescript-vue-plugin"
 	"johnsoncodehk.vscode-tsconfig-helper"
-	"vitest.explorer"
 	"GitHub.copilot"
 	"github.copilot-chat"
 	"usernamehw.errorlens"
@@ -39,7 +37,6 @@ extensions=(
 	"github.vscode-github-actions"
 	"GitHub.vscode-pull-request-github"
 	"naumovs.color-highlight"
-	"WakaTime.vscode-wakatime"
 	"znck.grammarly"
 	"Gruntfuggly.todo-tree"
 	"vitest.explorer"

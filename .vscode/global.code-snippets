@@ -1,19 +1,31 @@
 {
   "import": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,typescriptreact",
     "prefix": "im",
     "body": [
       "import { $1 } from '$2';"
     ],
     "description": "Import a module"
   },
-  "export-all": {
+  "export": {
     "scope": "javascript,typescript",
     "prefix": "ex",
     "body": [
-      "export * from '$2';"
+      "export { $1 } from '$2';"
     ],
     "description": "Export a module"
+  },
+  "export-all": {
+    "scope": "javascript,typescript",
+    "prefix": "exa",
+    "body": [
+      "export * from '$2';"
+    ],
+    "description": "Export all module"
+  },
+  "Destructure Object": {
+    "prefix": "cc",
+    "body": "const { $2 } = $1"
   },
   "vue-script-setup": {
     "scope": "vue",
@@ -96,5 +108,13 @@
     "body": [
       "const { t } = useI18n()"
     ]
-  }
+  },
+  "storeToRefs": {
+    "scope": "javascript,typescript",
+    "prefix": "store",
+    "body": [
+      "const { $2 } = storeToRefs($1);"
+    ],
+    "description": "storeToRefs a Ref"
+  },
 }

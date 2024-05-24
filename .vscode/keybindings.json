@@ -1,9 +1,9 @@
 [
   {
-		"key": "space e",
-		"command": "workbench.view.explorer",
+    "key": "space e",
+    "command": "workbench.view.explorer",
     "when": "filesExplorerFocus && !inputFocus"
-	},
+  },
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -56,5 +56,13 @@
   {
     "key": "alt+cmd+p",
     "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.showNextWindowTab"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.showPreviousWindowTab"
   }
 ]
