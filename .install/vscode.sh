@@ -25,9 +25,17 @@ extensions=(
 	"github.copilot-chat"
 	"usernamehw.errorlens"
 	"streetsidesoftware.code-spell-checker"
+	ms-vscode-remote.remote-ssh
 
 	# tailwindcss
 	"bradlc.vscode-tailwindcss"
+
+	#typescript
+	ms-vscode.vscode-typescript-next
+	yoavbls.pretty-ts-errors
+
+	#react
+	dsznajder.es7-react-js-snippets
 
 	# up to you
 	"eamodio.gitlens"
@@ -40,6 +48,8 @@ extensions=(
 	"znck.grammarly"
 	"Gruntfuggly.todo-tree"
 	"vitest.explorer"
+	monish.regexsnippets
+	meganrogge.template-string-converter
 )
 
 for extension in "${extensions[@]}"; do

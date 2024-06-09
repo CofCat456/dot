@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
-	editor = nvim
+	editor = code --wait
 	ignorecase = false
 [push]
   default = simple
@@ -22,14 +22,6 @@
 [user]
 	name = CofCat456
 	email = a25690756@gmail.com
-[diff]
-  tool = nvimdiff
-[difftool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -37,3 +29,5 @@
 	process = git-lfs filter-process
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = true
