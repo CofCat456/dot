@@ -3,7 +3,7 @@
     "scope": "javascript,typescript,typescriptreact",
     "prefix": "im",
     "body": [
-      "import { $1 } from '$2';"
+      "import { $2 } from '$1';"
     ],
     "description": "Import a module"
   },
@@ -11,7 +11,7 @@
     "scope": "javascript,typescript",
     "prefix": "ex",
     "body": [
-      "export { $1 } from '$2';"
+      "export { $2 } from '$1';"
     ],
     "description": "Export a module"
   },
@@ -45,11 +45,18 @@
       "</template>"
     ]
   },
+  "vue-template-el": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "trel",
+    "body": [
+      "const ${1:el} = shallowRef<HTMLDivElement | null>(null)"
+    ]
+  },
   "vue-template-ref": {
     "scope": "javascript,typescript,vue",
     "prefix": "tref",
     "body": [
-      "const ${1:el} = shallowRef<HTMLDivElement>()"
+      "const ${1:ref} = shallowRef<ComponentExposed<typeof ${2:component}> | null>(null)"
     ]
   },
   "vue-computed": {
@@ -108,13 +115,5 @@
     "body": [
       "const { t } = useI18n()"
     ]
-  },
-  "storeToRefs": {
-    "scope": "javascript,typescript",
-    "prefix": "store",
-    "body": [
-      "const { $2 } = storeToRefs($1);"
-    ],
-    "description": "storeToRefs a Ref"
-  },
+  }
 }
