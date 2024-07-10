@@ -11,10 +11,6 @@
   interactive = auto
   grep = auto
   ui = auto
-[alias]
-  amend = commit --amend --no-edit
-  open = "!hub browse"
-
 [hub]
   protocol = https
 [github]
