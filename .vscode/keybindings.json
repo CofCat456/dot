@@ -45,10 +45,6 @@
     "when": "terminal.active"
   },
   {
-    "key": "cmd+k",
-    "command": "workbench.action.terminal.kill"
-  },
-  {
     "key": "cmd+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
@@ -64,25 +60,5 @@
   {
     "key": "cmd+[",
     "command": "workbench.action.showPreviousWindowTab"
-  },
-  {
-    "key": "shift+cmd+k",
-    "command": "workbench.action.pinEditor",
-    "when": "!activeEditorIsPinned"
-  },
-  {
-    "key": "cmd+k shift+enter",
-    "command": "-workbench.action.pinEditor",
-    "when": "!activeEditorIsPinned"
-  },
-  {
-    "key": "shift+cmd+k",
-    "command": "workbench.action.unpinEditor",
-    "when": "activeEditorIsPinned"
-  },
-  {
-    "key": "cmd+k shift+enter",
-    "command": "-workbench.action.unpinEditor",
-    "when": "activeEditorIsPinned"
   }
 ]

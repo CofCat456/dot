@@ -1,7 +1,7 @@
 {
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
-"editor.fontFamily": "Input Mono, monospace",
+  "editor.fontFamily": "Input Mono, monospace",
   "editor.fontSize": 13.5,
   "editor.fontLigatures": true,
   "editor.guides.bracketPairs": "active",
